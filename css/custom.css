@@ -1,0 +1,32 @@
+body {
+	font-family: Roboto;
+}
+
+@media (min-width: 768px) {
+	p {
+		text-align: justify;
+	}
+}
+
+h1 {
+	font-weight: 900;
+	color: #222;
+	background: transparent url(../img/logo.svg) no-repeat;
+	background-size: 50px;
+	padding-left: 60px;
+	line-height: 50px;
+}
+
+#jumbo .dark {
+	background-color: #222; color: #ddd; font-size: 1.25rem;
+}
+#jumbo .light {
+	background-color: #ddd; color: #222; font-size: 1.25rem;
+}
+
+#footer {
+	border-width: 1px 0 0 0; 
+	border-style: solid; 
+	border-color: #ccc;
+}
+
