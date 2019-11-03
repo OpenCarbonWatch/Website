@@ -12,9 +12,35 @@ h1 {
 	font-weight: 900;
 	color: #222;
 	background: transparent url(../img/logo.svg) no-repeat;
-	background-size: 50px;
-	padding-left: 60px;
-	line-height: 50px;
+}
+
+@media (max-width: 767px) {
+	h1 {
+		background-size: 35px;
+		padding-left: 45px;
+		line-height: 35px;
+		font-size: 1.7rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	h1 .version {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	h1 {
+		background-size: 50px;
+		padding-left: 60px;
+		line-height: 50px;
+		font-size: 2.5rem;
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	h1 .version {
+		font-weight: 400;
+		font-size: 2rem;
+	}
 }
 
 #jumbo .dark {
