@@ -1,100 +1,18 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.html')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+@section('content')
+    <h1>Open Carbon Watch <span class="version">2019-11-17</span></h1>
+    <div id="jumbo" class="row mb-5 px-0 py-0 ml-0 mr-0">
+        <div class="col-md-5 px-4 py-4 mb-3 dark">
+            We monitor greenhouse gases emissions reports published by public and private organizations, along with their legal obligations and their own commitments, and track them over time.
         </div>
-    </body>
-</html>
+        <div class="col-md-7 px-4 py-4 mb-3 light">
+            <b>Want to help?</b> Confront organizations close to you with their obligations and commitments. Push them to action! Keep us informed of reports, obligations or engagements from other organizations in the world. Help us process the data or enhance this website. <a href="#footer">Contact&nbsp;us</a>.
+        </div>
+    </div>
+    <div class="mb-5">
+        <h2>France</h2>
+        <p>In France, the <a href="https://www.legifrance.gouv.fr/affichCodeArticle.do?idArticle=LEGIARTI000031694974&cidTexte=LEGITEXT000006074220">Code de l'environnement (article L229-25)</a> states that all private organizations (employing 500 persons in mainland or 250 persons overseas) and all public organizations (employing 250 persons or spanning a population of 50,000) must perform their carbon assessment and publish it on <a href="http://www.bilans-ges.ademe.fr/">ADEME's dedicated platform</a>. This mandatory assessment includes Scope 1 and Scope 2 emissions (Scope 3 being only recommended) and must be performed at least once every 4 years for private organizations and once every 3 years for public ones. The report must be submitted along with an action plan to reduce the assessed emissions.</p>
+        <p><i>The following tables are obtained by data consolidation techniques from multiples sources (see our <a href="https://github.com/OpenCarbonWatch">GitHub repositories</a> for more details). They can be considered as hints, but should by no means be interpreted as statements of whether each organization currently complies or not with the legislation.</i></p>
+    </div>
+@endsection
