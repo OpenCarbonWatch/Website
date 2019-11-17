@@ -11,4 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@welcome');
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect']
+], function () {
+    // Localized routes
+    Route::get('/', 'HomeController@home')->name('home');
+    Route::get('/france', 'HomeController@france')->name('france');
+    Route::get('/france/regions-departments', 'HomeController@franceRegionsDepartments')->name('france-regions-departments');
+});

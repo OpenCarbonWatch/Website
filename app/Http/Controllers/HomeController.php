@@ -4,8 +4,20 @@ namespace App\Http\Controllers;
 
 class HomeController extends Controller
 {
-    public function welcome()
+    public function home()
     {
-        return view('welcome');
+        return view('home');
+    }
+
+    public function france()
+    {
+        return view('france');
+    }
+
+    public function franceRegionsDepartments()
+    {
+        $title = 'html.view-card.regions-departments.title';
+        $results = [];
+        return view('results', compact('title', 'results'));
     }
 }

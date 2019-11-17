@@ -1,3 +1,4 @@
+@import 'variables';
 @import "~bootstrap/scss/bootstrap";
 
 body {
@@ -5,14 +6,14 @@ body {
 }
 
 @media (min-width: 768px) {
-    p {
+    p, li {
         text-align: justify;
     }
 }
 
 h1 {
     font-weight: 900;
-    color: #222;
+    color: $dark;
     background: transparent url(/img/logo.svg) no-repeat;
 }
 
@@ -24,9 +25,6 @@ h1 {
         font-size: 1.7rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
-    }
-    h1 .version {
-        display: none;
     }
 }
 
@@ -46,10 +44,10 @@ h1 {
 }
 
 #jumbo .dark {
-    background-color: #222; color: #ddd; font-size: 1.25rem;
+    background-color: $dark; color: #ddd; font-size: 1.25rem;
 }
 #jumbo .light {
-    background-color: #ddd; color: #222; font-size: 1.25rem;
+    background-color: #ddd; color: $dark; font-size: 1.25rem;
 }
 
 #footer {
@@ -58,3 +56,26 @@ h1 {
     border-color: #ccc;
 }
 
+.lang {
+    padding: 3px 5px 3px 5px;
+    margin-right: 5px;
+    background-color: $dark;
+    display: inline-block;
+}
+
+.lang a {
+    color: $white;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.card {
+    border: 0;
+    border-radius: 0;
+}
+
+.card p {
+    text-align: left;
+}
