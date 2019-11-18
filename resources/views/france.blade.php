@@ -5,8 +5,9 @@
     @include('layouts.navbar')
     <div class="mb-5">
         <h2>@lang('html.jumbo.france-title')</h2>
+        <h3>@lang('html.h2.legal')</h3>
         @markdownFile('jumbo.france')
-        <h2>@lang('html.h2.explore')</h2>
+        <h3>@lang('html.h2.explore')</h3>
         <div class="row">
             {{--
             <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
@@ -21,6 +22,13 @@
             </div>
             --}}
             @include('partials.view-card', ['key' => 'regions-departments', 'route' => 'france-regions-departments'])
+            @include('partials.view-card', ['key' => 'city-groups', 'route' => 'france-city-groups'])
+            @include('partials.view-card', ['key' => 'cities', 'route' => 'france-cities'])
+            @include('partials.view-card', ['key' => 'state', 'route' => 'france-state'])
+            @include('partials.view-card', ['key' => 'other-public', 'route' => 'france-other-public'])
+            @include('partials.view-card', ['key' => 'companies', 'route' => 'france-companies'])
+            @include('partials.view-card', ['key' => 'specialized-private', 'route' => 'france-specialized-private'])
+            @include('partials.view-card', ['key' => 'associations', 'route' => 'france-associations'])
         </div>
     </div>
 @endsection

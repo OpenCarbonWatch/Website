@@ -11,12 +11,15 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet"/>
 </head>
 <body>
-<div class="container">
-    @yield('content')
-    @include('layouts.footer')
-    {{-- We don't need JavaScript for the moment ...
-    <script src="{{ mix('js/app.js') }}"></script>
-    --}}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-11 col-xl-9">
+            @yield('content')
+            @include('layouts.footer')
+        </div>
+    </div>
 </div>
+{{-- We don't need JavaScript for the moment --}}
+{{-- <script src="{{ mix('js/app.js') }}"></script> --}}
 </body>
 </html>

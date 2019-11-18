@@ -82,6 +82,7 @@ reductions (a decay rate of 5% per year is needed if everybody starts right now)
 suits you and dig into their carbon reports. Challenge their hypotheses, their methods. Ask them questions about how
 they took into account sources of emissions you can think of but don't find in their report. Inform-us of your findings,
 as we might wish to develop a carbon reporting review section.
+* **As a lawyer or legal expert, help us in our efforts.** We are always looking for legal means of urging public or private organisations to comply with their obligations, and to force the state services responsible for monitoring the application of the law and inflicting sanctions to do so in practice.
 * **As a developer or a data-scientist, help us with this website.** We have a large backlog of both data pre-processing
 tasks to build a reliable worldwide database of carbon reports and software engineering tasks to build a better website.
 Please get in touch so we can find a task that suits you well.
