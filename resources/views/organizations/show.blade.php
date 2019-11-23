@@ -1,8 +1,6 @@
 @extends('layouts.html')
 
 @section('content')
-    <h1>Open Carbon Watch</h1>
-    @include('layouts.navbar')
     <div class="mb-5">
         <h2>{{ $organization->name }}</h2>
         <h3>@lang('results.identity-card.title')</h3>
