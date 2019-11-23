@@ -58,10 +58,18 @@ server {
     listen 443 ssl http2;
     server_name opencarbonwatch.org;
     client_max_body_size 100M;
+    gzip on;
+    gzip_types text/plain text/css application/javascript text/html application/xml;
     root /srv/ocw/public;
     index index.php index.html index.htm index.nginx-debian.html;
     location / {
         try_files $uri $uri/ /index.php?$query_string;
+    }
+    # Cache header
+    location ~* \.(?:css|js|svg|ico)$ {
+      expires 1y;
+      access_log off;
+      add_header Cache-Control "public";
     }
     location ~ \.php$ {
         try_files $uri =404;
