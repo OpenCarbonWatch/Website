@@ -14,12 +14,12 @@ require('laravel-mix-purgecss');
  */
 
 mix
-    // .js('resources/js/app.js', 'public/js')
+    .js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    /* .polyfill({
+    .polyfill({
         enabled: true,
         useBuiltIns: "usage",
         targets: {"firefox": "50", "ie": 11} // Compatibility with Internet explorer for method findIndex
-    }) */
+    })
     .purgeCss()
     .version();

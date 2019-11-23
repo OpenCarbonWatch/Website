@@ -1,10 +1,5 @@
 <div id="footer" class="mt-5 mb-3 py-2">
     <p>
-        <i>@lang('html.footer.legal', [
-            'hosting' => '<a href="https://www.ovh.com/fr/support/mentions-legales/">OVH SAS</a>'
-            ])</i>
-    </p>
-    <p>
         @lang('html.footer.contact', [
             'github' => '<a href="https://github.com/OpenCarbonWatch">GitHub</a>',
             'twitter' => '<a href="https://twitter.com/OpenCarbonWatch">Twitter</a>',

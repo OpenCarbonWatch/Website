@@ -17,6 +17,12 @@ Route::group([
 ], function () {
     // Localized routes
     Route::get('/', 'HomeController@home')->name('home');
+    // Texts
+    Route::get('/texts/about', 'TextsController@showAbout')->name('texts-about');
+    Route::get('/texts/context', 'TextsController@showContext')->name('texts-context');
+    Route::get('/texts/what-we-do', 'TextsController@showWhatWeDo')->name('texts-what-we-do');
+    Route::get('/texts/how-to-help', 'TextsController@showHowToHelp')->name('texts-how-to-help');
+    // France data
     Route::get('/france', 'HomeController@france')->name('france');
     Route::get('/france/organizations/{id}', 'HomeController@franceOrganization')->name('france-organization');
     Route::get('/france/regions-departments', 'HomeController@franceRegionsDepartments')->name('france-regions-departments');

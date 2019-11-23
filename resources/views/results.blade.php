@@ -1,8 +1,6 @@
 @extends('layouts.html')
 
 @section('content')
-    <h1>Open Carbon Watch</h1>
-    @include('layouts.navbar')
     <div class="mb-5">
         <h2>@lang($title) ({{ count($results) }})</h2>
         <div class="progress mt-3 mb-3">
@@ -35,6 +33,8 @@
                 @foreach ($results as $result)
                     <tr>
                         <td title="{{ $result['organization']->name }}">
+                            <!-- For CSS purifier: badge-danger badge-warning badge-success badge-light -->
+                            <span class="badge badge-pill badge-{{ $result['status'] }} mr-1">&nbsp;</span>
                             <a href="{{ route('france-organization', ['id' => $result['organization']->id]) }}">
                             @if (strlen($result['organization']->name) > 70)
                                 {{ substr($result['organization']->name, 0, 60) . ' ...' }}
@@ -47,10 +47,7 @@
                             {{ $result['organization']->city_id }}
                         </td>
                         <td>
-                            <!-- For CSS purifier: badge-danger badge-warning badge-success badge-light -->
-                            <span class="badge badge-pill badge-{{ $result['status'] }}">
-                                {{ $result['year'] ?? trans('results.none') }}
-                            </span>
+                            {{ $result['year'] ?? '' }}
                         </td>
                         <td>
                             @if ($result['year'] != null)

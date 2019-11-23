@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'description' => 'Nous surveillons les bilans d\'émissions de gaz à effet de serre publiés par les organisations publiques ou privées, et nous les comparons à leurs obligations légales et à leurs propres engagements.',
+    'carbon' => 'L\'humanité doit drastiquement et rapidement diminuer ses émissions de gaz à effet de serre, jusqu\'à atteindre un solde neutre au milieu du siècle, afin d\'espérer contenir la hausse de la température à 2°C et limiter les dégâts sur la Nature et les humains.',
+    'description' => 'Nous suivons dans le temps les bilans d\'émissions de gaz à effet de serre publiés par les organisations publiques ou privées, et nous les comparons à leurs obligations légales et à leurs propres engagements.',
     'footer' => [
         'contact' => 'Contactez-nous sur :github, :twitter ou par courriel à :email.',
-        'legal' => 'Ce site est un site non commercial, non professionnel, édité par une personne physique. Il ne traite pas de donnée personnelle et utilise seulement un cookie technique de session. Il est hébergé par :hosting.',
     ],
     'jumbo' => [
         'h2' => 'Bilans d\'émissions à travers le monde',
@@ -16,8 +16,11 @@ return [
         'legal' => 'Contexte législatif',
     ],
     'navbar' => [
-        'home' => 'Accueil',
+        'about' => '&Agrave; propos',
+        'context' => 'Contexte',
         'france' => 'France',
+        'how-to-help' => 'Comment aider ?',
+        'what-we-do' => 'Notre démarche',
     ],
     'view-card' => [
         'view' => 'Voir',
@@ -47,12 +50,11 @@ return [
         ],
         'specialized-private' => [
             'label' => 'Les organismes privés spécialisés employant plus de 500 personnes (ou 250 en outre-mer) doivent faire un bilan tous les 3 ans.',
-            'title' => 'Organismes spécialisés',
+            'title' => 'Organismes privés spécialisés',
         ],
         'associations' => [
             'label' => 'Les associations employant plus de 500 personnes (ou 250 en outre-mer) doivent faire un bilan tous les 3 ans.',
             'title' => 'Associations',
         ],
     ],
-    'want-to-help' => '<b>Envie d\'aider ?</b> Parlez-en ! Confrontez les organisations proches de vous avec leurs obligations et leurs engagements. Poussez-les à l\'action ! Tenez-nous informés des bilans, des obligations ou des engagements pris dans le monde. Aidez-nous à traiter les données ou à améliorer ce site. <a href="#footer">Contactez-nous</a>.',
 ];

@@ -1,13 +1,11 @@
 @extends('layouts.html')
 
 @section('content')
-    <h1>Open Carbon Watch</h1>
-    @include('layouts.navbar')
     <div class="mb-5">
-        <h2>@lang('html.jumbo.france-title')</h2>
-        <h3>@lang('html.h2.legal')</h3>
+        <h1>@lang('html.jumbo.france-title')</h1>
+        <h2>@lang('html.h2.legal')</h2>
         @markdownFile('jumbo.france')
-        <h3>@lang('html.h2.explore')</h3>
+        <h2>@lang('html.h2.explore')</h2>
         <div class="row">
             {{--
             <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
