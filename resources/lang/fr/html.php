@@ -22,8 +22,24 @@ return [
         'how-to-help' => 'Comment aider ?',
         'what-we-do' => 'Notre démarche',
     ],
+    'search' => [
+        'name' => 'Nom de l\'organisation',
+        'among_concerned' => 'Chercher parmi les organisations concernées par l\'obligation',
+        'among_reported' => 'Chercher parmi les organisations ayant publié au moins un bilan',
+        'among_all' => 'Chercher parmi toutes les organisations',
+        'results' => [
+            'title' => 'Résultats de la recherche',
+            'none' => 'Aucun résultat pour la recherche',
+            'overload' => 'Votre recherche renvoie un trop grand nombre de résultats. Seuls les 5000 premiers sont affichés. Pour analyser de plus gros volumes, téléchargez les données brutes depuis nos dépôts.',
+        ],
+    ],
     'view-card' => [
         'view' => 'Voir',
+        'search' => [
+            'label' => 'Filtrer la base de données par nom d\'organisation, type juridique, état de déclaration ou statut réglementaire.',
+            'title' => 'Recherche avancée',
+            'button' => 'Chercher',
+        ],
         'regions-departments' => [
             'label' => 'Toutes les régions et les départements de France doivent faire un bilan tous les 3 ans.',
             'title' => 'Régions, départements',

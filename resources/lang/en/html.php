@@ -22,8 +22,24 @@ return [
         'how-to-help' => 'How to help?',
         'what-we-do' => 'What we do',
     ],
+    'search' => [
+        'name' => 'Organization name',
+        'among_concerned' => 'Search among organizations for which reporting is mandatory',
+        'among_reported' => 'Search among organizations having published at least one report',
+        'among_all' => 'Search among all organizations',
+        'results' => [
+            'title' => 'Search results',
+            'none' => 'No result found for query',
+            'overload' => 'Your search query returned too many results. Only the first 5000 are displayed. To analyze larger volumes, download raw data from our repositories.',
+        ],
+    ],
     'view-card' => [
         'view' => 'View',
+        'search' => [
+            'label' => 'Query the database by organization name, legal type and reporting or regulation status.',
+            'title' => 'Advanced search',
+            'button' => 'Search',
+        ],
         'regions-departments' => [
             'label' => 'All french regions and departments must perform 3-years carbon reporting',
             'title' => 'Regions, departments',

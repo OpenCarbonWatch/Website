@@ -23,7 +23,7 @@ return [
     'missing' => 'Missing',
     'no' => 'No',
     'none' => 'None',
-    'regulation0' => 'Information available as <i>open data</i> does not allow to assert that this organization falls under the mandatory carbon reporting regulation.',
+    'regulation' => 'Information available as <i>open data</i> does not allow to assert that this organization falls under the mandatory carbon reporting regulation.',
     'regulation1' => 'Probably concerned by the mandatory carbon reporting regulation every 4 years as a private juridical person, hiring more than 500 persons according to the SIRENE database, with headquarters in mainland.',
     'regulation2' => 'Probably concerned by the mandatory carbon reporting regulation every 4 years as a private juridical person, hiring more than 250 persons according to the SIRENE database, with headquarters overseas.',
     'regulation3' => 'Probably concerned by the mandatory carbon reporting regulation every 3 years as a state service (legal unit type, level 2, equal to 71).',

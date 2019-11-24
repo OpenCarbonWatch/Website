@@ -23,7 +23,7 @@ return [
     'missing' => 'Absent',
     'no' => 'Non',
     'none' => 'Aucun',
-    'regulation0' => 'Les informations disponibles en <i>open data</i> ne permettent pas d\'affirmer que cette organisation est soumise au bilan réglementaire.',
+    'regulation' => 'Les informations disponibles en <i>open data</i> ne permettent pas d\'affirmer que cette organisation est soumise au bilan réglementaire.',
     'regulation1' => 'Probablement soumise à l\'obligation d\'un bilan réglementaire tous les 4 ans en tant que personne morale de droit privé, employant plus de 500 personnes d\'après la base SIRENE, et dont le siège est situé en Métropôle.',
     'regulation2' => 'Probablement soumise à l\'obligation d\'un bilan réglementaire tous les 4 ans en tant que personne morale de droit privé, employant plus de 250 personnes d\'après la base SIRENE, et dont le siège est situé en outre-mer.',
     'regulation3' => 'Probablement soumise à l\'obligation d\'un bilan réglementaire tous les 3 ans en tant que service de l\'État (type de niveau 2 d\'unité légale 71).',

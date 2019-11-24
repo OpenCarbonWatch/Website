@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Model\Organization;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -15,6 +18,25 @@ class HomeController extends Controller
     public function france()
     {
         return view('france');
+    }
+
+    public function franceSearch()
+    {
+        return view('france-search');
+    }
+
+    public function franceSearchResults(Request $request)
+    {
+        $name = $request->get('name');
+        $name = strtoupper($name);
+        $query = Organization::where('name', 'LIKE', '%' . $name . '%')->limit(5000);
+        if ($request->get('search_among') == 'concerned') {
+            $query = $query->whereNotNull('regulation');
+        }
+        if ($request->get('search_among') == 'reported') {
+            $query = $query->whereHas('assessments');
+        }
+        return $this->showResults('html.search.results.title', $query);
     }
 
     public function franceRegionsDepartments()
@@ -69,11 +91,15 @@ class HomeController extends Controller
         return $this->organizations('associations', $query);
     }
 
-    private function organizations($key, $query)
+    private function organizations($key, Builder $query)
     {
         $title = "html.view-card.$key.title";
+        return $this->showResults($title, $query->whereNotNull('regulation'));
+    }
+
+    private function showResults($title, Builder $query)
+    {
         $organizations = $query
-            ->whereNotNull('regulation')
             ->with(['assessments', 'organizationType'])
             ->orderBy('name')
             ->get()->all();

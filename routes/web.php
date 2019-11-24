@@ -24,6 +24,8 @@ Route::group([
     Route::get('/texts/how-to-help', 'TextsController@showHowToHelp')->name('texts-how-to-help');
     // France data
     Route::get('/france', 'HomeController@france')->name('france');
+    Route::get('/france/search', 'HomeController@franceSearch')->name('france-search');
+    Route::post('/france/search', 'HomeController@franceSearchResults')->name('france-search-results');
     Route::get('/france/organizations/{id}', 'HomeController@franceOrganization')->name('france-organization');
     Route::get('/france/regions-departments', 'HomeController@franceRegionsDepartments')->name('france-regions-departments');
     Route::get('/france/cities', 'HomeController@franceCities')->name('france-cities');
