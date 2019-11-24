@@ -43,6 +43,7 @@ class CreateFrance extends Migration
             $table->float('reductions_scope_1')->nullable();
             $table->float('reductions_scope_2')->nullable();
             $table->float('reductions_scope_3')->nullable();
+			$table->boolean('is_draft');
             $table->string('source_url');
         });
         Schema::create('assessment_organization', function (Blueprint $table) {

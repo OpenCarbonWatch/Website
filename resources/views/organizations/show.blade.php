@@ -40,7 +40,12 @@
                 <tbody>
                 @foreach ($assessments as $assessment)
                     <tr>
-                        <td>{{ $assessment->reporting_year }}</td>
+                        <td>
+                            {{ $assessment->reporting_year }}
+                            @if ($assessment->is_draft)
+                                *
+                            @endif
+                        </td>
                         <td>{{ number_format($assessment->total_scope_1) }} tCO2e</td>
                         <td>{{ number_format($assessment->total_scope_2) }} tCO2e</td>
                         <td>
@@ -63,7 +68,7 @@
                 </tbody>
             </table>
         </div>
-        @foreach (['split_year', 'shared_report', 'nested'] as $alert)
+        @foreach (['split_year', 'shared_report', 'nested', 'is_draft'] as $alert)
             @if ($alerts[$alert])
                 <div class="alert alert-info">
                     @lang("results.alerts.$alert")

@@ -108,7 +108,7 @@ class HomeController extends Controller
         foreach ($organizations as $organization) {
             $year = null;
             foreach ($organization->assessments as $a) {
-                if ($a->hasEmissions12()) {
+                if (!$a->is_draft && $a->hasEmissions12()) {
                     if ($year == null || $a->reporting_year > $year) {
                         $year = $a->reporting_year;
                     }
@@ -148,6 +148,7 @@ class HomeController extends Controller
             'split_year' => count(array_unique($assessments->map(function($a) { return $a->reporting_year; })->all())) < count($assessments),
             'shared_report' => !$assessments->every(function($a) { return count($a->organizations) == 1; }),
             'nested' => $organization->population == null,
+            'is_draft' => !$assessments->every(function($a) { return !$a->is_draft; }),
         ];
         return view('organizations.show', compact('alerts', 'assessments', 'organization'));
     }
