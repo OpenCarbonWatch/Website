@@ -1,4 +1,4 @@
-## A propos de nous
+## &Agrave; propos de nous
 
 Nous consolidons des données ouvertes pour faciliter leur exploration. Voir nos
 [dépôts GitHub](https://github.com/OpenCarbonWatch) pour plus de détails.

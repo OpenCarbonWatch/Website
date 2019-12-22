@@ -1,4 +1,4 @@
-## Que faisons-nous et pourquoi ?
+## Notre démarche : que faisons-nous et pourquoi ?
 
 Réduire les émissions à un solde net nul d'ici le milieu du siècle (ce qui est nécessaire pour respecter l'accord de Paris) exige un suivi attentif des émissions annuelles à tous les niveaux (particuliers, petites ou moyennes entreprises, villes, grandes entreprises, pays).
 

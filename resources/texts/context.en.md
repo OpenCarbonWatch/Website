@@ -1,4 +1,4 @@
-## How did we get here?
+## Context: how did we get here?
 
 ### Historical concentrations
 

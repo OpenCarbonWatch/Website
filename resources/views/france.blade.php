@@ -20,7 +20,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">@lang('html.view-card.search.title')</h5>
                         <p class="card-text">@lang('html.view-card.search.label')</p>
-                        <a href="{{ route('france-search') }}" class="btn btn-primary mt-auto">@lang('html.view-card.search.button')</a>
+                        <a href="{{ route('france-search') }}" class="btn btn-dark mt-auto">@lang('html.view-card.search.button')</a>
                     </div>
                 </div>
             </div>

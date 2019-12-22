@@ -1,8 +1,15 @@
-$dark: #222222;
-$light: #dddddd;
-$info: #cceeff;
+$black: #000500;
+$dark: #362417;
+$primary: #92817a;
+$light: #f1dabf;
+$white: #fffbff;
+$info: #aee5d8;
 
 $theme-colors: (
+    'black': $black,
     'dark': $dark,
+    'primary': $primary,
     'light': $light,
+    'white': $white,
+    'info': $info,
 );

@@ -5,10 +5,40 @@ body {
     font-family: Roboto, serif;
 }
 
+h1, h2, h3, h4, h5 {
+    color: $dark;
+}
+
+a {
+    text-decoration: underline;
+}
+
+.btn {
+    border-radius: 0;
+    text-decoration: none;
+}
+
+.card {
+    border: 0;
+    border-radius: 0;
+}
+
+.card p {
+    text-align: left;
+}
+
 @media (min-width: 768px) {
     p, li {
         text-align: justify;
     }
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.navbar-dark .navbar-brand {
+    color: $light;
 }
 
 .jumbo-logo {
@@ -19,7 +49,7 @@ body {
 }
 
 #jumbo .light {
-    background-color: #ddd;
+    background-color: $light;
     color: $dark;
     font-size: 1.25rem;
 }
@@ -27,29 +57,17 @@ body {
 #footer {
     border-width: 1px 0 0 0;
     border-style: solid;
-    border-color: #ccc;
+    border-color: $primary;
 }
 
 .lang {
     padding: 3px 5px 3px 5px;
     margin-right: 5px;
-    background-color: $dark;
+    background-color: $primary;
     display: inline-block;
 }
 
 .lang a {
     color: $white;
-}
-
-.btn {
-    border-radius: 0;
-}
-
-.card {
-    border: 0;
-    border-radius: 0;
-}
-
-.card p {
-    text-align: left;
+    text-decoration: none;
 }
