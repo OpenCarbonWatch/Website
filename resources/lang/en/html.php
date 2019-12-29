@@ -14,6 +14,7 @@ return [
     'h2' => [
         'explore' => 'Explore the data set',
         'legal' => 'Regulatory context',
+        'data' => 'Data sources and versions',
     ],
     'navbar' => [
         'about' => 'About',

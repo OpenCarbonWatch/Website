@@ -25,5 +25,7 @@
                 </div>
             </div>
         </div>
+        <h2>@lang('html.h2.data')</h2>
+        @markdownFile('france.data')
     </div>
 @endsection

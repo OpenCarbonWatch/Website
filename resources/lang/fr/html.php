@@ -14,6 +14,7 @@ return [
     'h2' => [
         'explore' => 'Explorez les données',
         'legal' => 'Contexte législatif',
+        'data' => 'Sources et versions',
     ],
     'navbar' => [
         'about' => '&Agrave; propos',
