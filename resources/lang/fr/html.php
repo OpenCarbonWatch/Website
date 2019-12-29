@@ -61,15 +61,15 @@ return [
             'title' => 'Autres organismes publics',
         ],
         'companies' => [
-            'label' => 'Les entreprises privées employant plus de 500 personnes (ou 250 en outre-mer) doivent faire un bilan tous les 3 ans.',
+            'label' => 'Les entreprises privées employant plus de 500 personnes (ou 250 en outre-mer) doivent faire un bilan tous les 4 ans.',
             'title' => 'Entreprises privées',
         ],
         'specialized-private' => [
-            'label' => 'Les organismes privés spécialisés employant plus de 500 personnes (ou 250 en outre-mer) doivent faire un bilan tous les 3 ans.',
+            'label' => 'Les organismes privés spécialisés employant plus de 500 personnes (ou 250 en outre-mer) doivent faire un bilan tous les 4 ans.',
             'title' => 'Organismes privés spécialisés',
         ],
         'associations' => [
-            'label' => 'Les associations employant plus de 500 personnes (ou 250 en outre-mer) doivent faire un bilan tous les 3 ans.',
+            'label' => 'Les associations employant plus de 500 personnes (ou 250 en outre-mer) doivent faire un bilan tous les 4 ans.',
             'title' => 'Associations',
         ],
     ],

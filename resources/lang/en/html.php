@@ -61,15 +61,15 @@ return [
             'title' => 'Other public organizations',
         ],
         'companies' => [
-            'label' => 'Private companies hiring 500 persons or more (250 or more overseas) must perform 3-years carbon reporting.',
+            'label' => 'Private companies hiring 500 persons or more (250 or more overseas) must perform 4-years carbon reporting.',
             'title' => 'Private companies',
         ],
         'specialized-private' => [
-            'label' => 'Specialized private organizations hiring 500 persons or more (250 or more overseas) must perform 3-years carbon reporting.',
+            'label' => 'Specialized private organizations hiring 500 persons or more (250 or more overseas) must perform 4-years carbon reporting.',
             'title' => 'Specialized private organizations',
         ],
         'associations' => [
-            'label' => 'Associations hiring 500 persons or more (250 or more overseas) must perform 3-years carbon reporting.',
+            'label' => 'Associations hiring 500 persons or more (250 or more overseas) must perform 4-years carbon reporting.',
             'title' => 'Associations',
         ],
     ],
