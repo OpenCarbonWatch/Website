@@ -5,14 +5,5 @@ $light: #f1dabf;
 $white: #fffbff;
 $info: #aee5d8;
 
-$theme-colors: (
-    'black': $black,
-    'dark': $dark,
-    'primary': $primary,
-    'light': $light,
-    'white': $white,
-    'info': $info,
-);
-
 // Restore default strong blue link color (and not primary color)
 $link-color: #0d6efd;
