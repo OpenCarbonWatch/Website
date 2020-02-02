@@ -4,9 +4,9 @@ utilisées.
 
 * Bilans d'émissions de gaz à effet de serre saisis et publiés sur la 
 [plateforme officielle de l'ADEME](http://www.bilans-ges.ademe.fr/fr/bilanenligne/bilans/index/siGras/0) 
-téléchargées le 2020-01-04.
+téléchargées le 2020-02-01.
 * [Base SIRENE](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/) 
-des unités légales et de leurs établissements au 2020-01-01.
+des unités légales et de leurs établissements au 2020-02-01.
 * Fichier INSEE de la 
 [composition des intercommunalités](https://www.insee.fr/fr/statistiques/fichier/2510634/Intercommunalite-Metropole_au_01-01-2019.zip)
 au 2019-01-01.
