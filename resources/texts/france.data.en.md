@@ -3,7 +3,7 @@ This website is based on open data. You can browse the source code we use to mer
 
 * Greenhouse gases emissions reports submitted and published on 
 [ADEME's dedicated platform](http://www.bilans-ges.ademe.fr/fr/bilanenligne/bilans/index/siGras/0) 
-downloaded on 2020-02-01.
+downloaded on 2020-02-22.
 * [SIRENE database](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/) 
 of legal units and their establishments, as of 2020-02-01.
 * INSEE's file of
