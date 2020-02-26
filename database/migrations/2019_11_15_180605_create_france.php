@@ -13,6 +13,32 @@ class CreateFrance extends Migration
      */
     public function up()
     {
+        Schema::create('activities', function (Blueprint $table) {
+            $table->string('id_1');
+            $table->string('label_1');
+            $table->string('id_2');
+            $table->string('label_2');
+            $table->string('id_3');
+            $table->string('label_3');
+            $table->string('id_4');
+            $table->string('label_4');
+            $table->string('id_5');
+            $table->string('label_5');
+        });
+        Schema::create('cities', function (Blueprint $table) {
+            $table->string('id');
+            $table->string('city_name');
+            $table->string('department_name');
+            $table->string('region_name');
+        });
+        Schema::create('legal_types', function (Blueprint $table) {
+            $table->string('id_1');
+            $table->string('label_1');
+            $table->string('id_2');
+            $table->string('label_2');
+            $table->string('id_3');
+            $table->string('label_3');
+        });
         Schema::create('organizations', function (Blueprint $table) {
             $table->string('id');
             $table->unique('id');
@@ -21,15 +47,9 @@ class CreateFrance extends Migration
             $table->integer('max_staff')->nullable();
             $table->integer('population')->nullable();
             $table->string('city_id')->nullable();
-            $table->string('organization_type_id');
+            $table->string('legal_type_id');
             $table->integer('regulation')->nullable();
-        });
-        Schema::create('organization_types', function (Blueprint $table) {
-            $table->string('id');
-            $table->unique('id');
-            $table->string('label_3');
-            $table->string('label_2');
-            $table->string('label_1');
+            $table->string('activity_id');
         });
         Schema::create('assessments', function (Blueprint $table) {
             $table->string('id');
@@ -61,7 +81,9 @@ class CreateFrance extends Migration
     {
         Schema::dropIfExists('assessment_organization');
         Schema::dropIfExists('assessments');
-        Schema::dropIfExists('organization_types');
         Schema::dropIfExists('organizations');
+        Schema::dropIfExists('legal_types');
+        Schema::dropIfExists('cities');
+        Schema::dropIfExists('activities');
     }
 }

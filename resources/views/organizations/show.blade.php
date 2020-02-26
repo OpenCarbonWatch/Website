@@ -6,10 +6,13 @@
         <h3>@lang('results.identity-card.title')</h3>
         <ul>
             <li><b>@lang('results.identity-card.id')</b> {{ $organization->id }}</li>
-            <li><b>@lang('results.identity-card.city_id')</b> {{ $organization->city_id }}</li>
-            <li><b>@lang('results.identity-card.type_1')</b> {{ $organization->organizationType->label_1 }}</li>
-            <li><b>@lang('results.identity-card.type_2')</b> {{ $organization->organizationType->label_2 }}</li>
-            <li><b>@lang('results.identity-card.type_3')</b> {{ $organization->organizationType->label_3 }}</li>
+            @if ($organization->city)
+                <li>
+                    <b>@lang('results.identity-card.city')</b>
+                    {{ $organization->city->region_name }} / {{ $organization->city->department_name }}
+                    / {{ $organization->city->city_name }} ({{ $organization->city->id }})
+                </li>
+            @endif
             @if ($organization->max_staff == null)
                 <li><b>@lang('results.identity-card.staff')</b>
                     @lang('results.identity-card.staff_sentence_unbounded', ['min'=>  $organization->min_staff ])
@@ -75,5 +78,30 @@
                 </div>
             @endif
         @endforeach
+        <h3>@lang('results.identity-card.classification')</h3>
+        <ul>
+            @if ($organization->legalType)
+                <li>
+                    <b>@lang('results.identity-card.legal_type')</b>
+                    <ul>
+                        <li>{{ $organization->legalType->id_1 }} - {{ $organization->legalType->label_1 }}</li>
+                        <li>{{ $organization->legalType->id_2 }} - {{ $organization->legalType->label_2 }}</li>
+                        <li>{{ $organization->legalType->id_3 }} - {{ $organization->legalType->label_3 }}</li>
+                    </ul>
+                </li>
+            @endif
+            @if ($organization->activity)
+                <li>
+                    <b>@lang('results.identity-card.activity')</b>
+                    <ul>
+                        <li>{{ $organization->activity->id_1 }} - {{ $organization->activity->label_1 }}</li>
+                        <li>{{ $organization->activity->id_2 }} - {{ $organization->activity->label_2 }}</li>
+                        <li>{{ $organization->activity->id_3 }} - {{ $organization->activity->label_3 }}</li>
+                        <li>{{ $organization->activity->id_4 }} - {{ $organization->activity->label_4 }}</li>
+                        <li>{{ $organization->activity->id_5 }} - {{ $organization->activity->label_5 }}</li>
+                    </ul>
+                </li>
+            @endif
+        </ul>
     </div>
 @endsection
