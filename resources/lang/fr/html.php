@@ -1,15 +1,20 @@
 <?php
 
 return [
+    'caps' => [
+        'context' => 'Gaz à effet de serre, hausse de la température, budget carbone et Accord de Paris ... pourquoi le sujet est-il important ?',
+        'france' => "Plus de 6 000 organisations doivent publier régulièrement leur bilans d'émissions ... où en sont-elles ?",
+        'how-to-help' => 'Acheter, voter, choisir, discuter, échanger, relire, vérifier, militer, analyser, communiquer, diffuser ... que faire pour aider ?',
+        'what-we-do' => "Bilans d'émissions, obligations légales, Scope 1, 2 et 3, plans d'actions ... en quoi la démarche est-elle utile ?",
+    ],
     'carbon' => 'L\'humanité doit drastiquement et rapidement diminuer ses émissions de gaz à effet de serre, jusqu\'à atteindre un solde neutre au milieu du siècle, afin d\'espérer contenir la hausse de la température à 2°C et limiter les dégâts sur la Nature et les humains.',
-    'description' => 'Nous suivons dans le temps les bilans d\'émissions de gaz à effet de serre publiés par les organisations publiques ou privées, et nous les comparons à leurs obligations légales et à leurs propres engagements.',
+    'description' => 'Nous suivons dans le temps les bilans d\'émissions de gaz à effet de serre publiés par les organisations publiques ou privées, et nous les comparons à leurs obligations légales et à leurs engagements volontaires.',
     'footer' => [
         'contact' => 'Contactez-nous sur :github, :twitter ou par courriel à :email.',
+        'legal' => 'Mentions légales',
     ],
-    'jumbo' => [
-        'h2' => 'Bilans d\'émissions à travers le monde',
-        'france-title' => 'France',
-        'france-button' => 'Explorer les données de France',
+    'h1' => [
+        'france' => 'France',
     ],
     'h2' => [
         'explore' => 'Explorez les données',
@@ -20,8 +25,8 @@ return [
         'about' => '&Agrave; propos',
         'context' => 'Contexte',
         'france' => 'France',
-        'how-to-help' => 'Comment aider ?',
-        'what-we-do' => 'Notre démarche',
+        'how-to-help' => 'Agir',
+        'what-we-do' => 'Démarche',
     ],
     'search' => [
         'name' => 'Nom de l\'organisation',
@@ -35,6 +40,7 @@ return [
         ],
     ],
     'view-card' => [
+        'explore' => 'Explorer',
         'view' => 'Voir',
         'search' => [
             'label' => 'Filtrer la base de données par nom d\'organisation, type juridique, état de déclaration ou statut réglementaire.',

@@ -1,9 +1,10 @@
-### Other countries
+## Who are we?
 
-Other countries or groups of countries around the world have adopted mandatory carbon reporting regulations,
-such as Australia, Brazil, Canada, China, the European Union, Japan, Kazakhstan, Mexico, New Zealand,
-South Africa, South Korea, Turkey, the United Kingdom, the United States of America, etc.
+We are a small collective whose main objective is to encourage public and private organizations to measure their 
+greenhouse gases emissions, so that they are aware of their own impact on climate change and can take the necessary 
+decisions to reduce it significantly, then verify the effects of these decisions and thus ensure that they follow a 
+reduction path compatible with the international stakes.
 
-We definitely plan on displaying open data for these countries in the following months or years.
-If you are interested in one of these carbon regulations, or if you know about another one, please get in
-touch. We look forward to integrating data coming from other regions of the world.
+To do this, we consolidate open data and format it to facilitate its communication to the public. 
+Our [GitHub repositories](https://github.com/OpenCarbonWatch) contain the full details on our processes for handling 
+this data and we will be happy to answer your questions.

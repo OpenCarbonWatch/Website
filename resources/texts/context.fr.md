@@ -1,31 +1,23 @@
-# Contexte : comment en sommes-nous arrivés là ?
+# Contexte
 
-### Des concentrations historiques
+Depuis la révolution industrielle, les activités et les sociétés humaines se sont structurées autour de l'usage des
+énergies fossiles, impactant fortement le climat. Préserver une planète habitable au XXIème siècle représente désormais
+un défi immense.
 
-Les concentrations de gaz à effet de serre dans l'atmosphère sont déjà plus élevées que jamais auparavant dans l'histoire des *homo sapiens* 
-(voir [CO2.earth](https://www.co2.earth/) pour la concentration de dioxyde de carbone en direct, 
-ou [CO2 levels](https://www.co2levels.org/) pour des graphiques historiques couvrant les 800 000 années précédentes). 
-Ces concentrations continuent d'augmenter chaque année, en réponse aux importantes émissions anthropiques annuelles
-(voir [Global Carbon Atlas](http://www.globalcarbonatlas.org/en/CO2-emissions) pour une carte des émissions annuelles par pays).
+### Une concentration historique
+
+La concentration des gaz à effet de serre dans l'atmosphère est déjà plus élevée que jamais auparavant dans l'histoire des *homo sapiens* 
+(voir [Vital Signs of the Planet](https://climate.nasa.gov/vital-signs/carbon-dioxide/) pour la concentration de dioxyde de carbone en direct, 
+et des graphiques historiques couvrant les 800 000 années précédentes). 
+Cette concentration continuent d'augmenter chaque année, en réponse aux importantes émissions d'origine anthropique annuelles
+(voir [Global Carbon Atlas](http://www.globalcarbonatlas.org/fr/CO2-emissions) pour une carte des émissions annuelles par pays).
 
 ### Une hausse de température déjà significative
 
-Ces concentrations ont déjà causé une hausse de 0,9°C de la température moyenne de la planète par rapport aux niveaux préindustriels 
+Ces concentrations ont déjà causé une hausse de 1°C de la température moyenne de la planète par rapport aux niveaux préindustriels 
 (voir [Vital Signs of the Planet](https://climate.nasa.gov/vital-signs/global-temperature/) de la NASA pour un graphique de l'anomalie de température dans le temps). 
-Même des changements héroïques n'éviteront pas une hausse d'au moins 1,5°C d'ici la fin du 21ème siècle, ce qui aura déjà d'énormes impacts sur la nature et les hommes 
+Même des changements héroïques de nos sociétés n'éviteront pas une hausse d'au moins 1,5°C d'ici la fin du 21ème siècle, ce qui aura déjà d'énormes impacts sur la nature et les hommes 
 (voir le [Chapitre 3](https://www.ipcc.ch/sr15/chapter/chapter-3/) du rapport 2018 du GIEC sur les impacts d'une hausse de 1,5°C).
-
-### Un accord mondial insuffisant
-
-En décembre 2015, 196 États parties ont adopté l'[Accord de Paris](https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement), 
-dont l'objectif déclaré est de maintenir la hausse de la température *bien en dessous de 2°C* et d'essayer de *la limiter à 1,5°C*. 
-Contrairement à l'accord précédent (le [Protocole de Kyoto](https://unfccc.int/kyoto_protocol)), 
-l'accord de Paris ne fixe ni objectifs de réduction ni plafonds d'émissions pour chaque pays, ni mécanismes de sanction. 
-Au lieu de cela, chaque pays a été invité à définir sa propre *contribution déterminée au niveau national*. 
-
-Actuellement, non seulement la somme des engagements pris par les pays est incompatible avec l'objectif des 2°C, 
-mais les politiques prévues ou effectivement mises en oeuvre dans chaque pays sont insuffisantes pour respecter ces engagements nationaux 
-(voir [Climate Action Tracker](https://climateactiontracker.org/countries/) pour une analyse par pays).
 
 ### Un budget carbone très restreint
 
@@ -42,4 +34,17 @@ d'Open Climate Data pour de belles représentations visuelles).
 
 Les productions prévues de combustibles fossiles jusqu'en 2030 dépassent déjà le budget de 1,5°C 
 (voir le rapport [Production Gap](http://productiongap.org/2019report/)). 
-Pour plus d'informations à ce sujet, voir le rapport [Carbon Budget](https://www.globalcarbonproject.org/carbonbudget/index.htm) du Global Carbon Project).
+Pour plus d'informations sur le budget carbone, voir le rapport [Carbon Budget](https://www.globalcarbonproject.org/carbonbudget/index.htm) du Global Carbon Project.
+
+### Un accord mondial insuffisant
+
+En décembre 2015, 196 États parties ont adopté l'[Accord de Paris](https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement), 
+dont l'objectif déclaré est de maintenir la hausse de la température *bien en dessous de 2°C* et d'essayer de *la limiter à 1,5°C*. 
+Contrairement à l'accord précédent (le [Protocole de Kyoto](https://unfccc.int/kyoto_protocol)), 
+l'accord de Paris ne fixe ni objectifs de réduction, ni plafonds d'émissions pour chaque pays, ni mécanismes de sanction. 
+Au lieu de cela, chaque pays a été invité à définir sa propre *contribution déterminée au niveau national* et à la 
+ré-évaluer périodiquement.
+
+Actuellement, non seulement la somme des engagements pris par les pays est incompatible avec l'objectif des 2°C, 
+mais les politiques prévues ou effectivement mises en oeuvre dans chaque pays sont insuffisantes pour respecter ces engagements nationaux 
+(voir [Climate Action Tracker](https://climateactiontracker.org/countries/) pour une analyse par pays).

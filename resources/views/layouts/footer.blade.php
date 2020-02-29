@@ -5,6 +5,7 @@
             'twitter' => '<a href="https://twitter.com/OpenCarbonWatch">Twitter</a>',
             'email' => '<a href="&#109ailt&#111;&#58;cont&#97;ct&#64;o&#112;enc&#97;&#114;&#98;onw&#97;t&#99;h&#46;o&#114;g">cont&#97;ct&#64;o&#112;enc&#97;&#114;&#98;onw&#97;t&#99;h&#46;o&#114;g</a>'
             ])
+        <a href="{{ route('texts-about') }}">@lang('html.footer.legal')</a>.
     </p>
     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
         <div class="lang">

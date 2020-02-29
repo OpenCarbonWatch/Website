@@ -12,3 +12,6 @@ as of 2019-01-01.
 * INSEE's file of [legal populations (except Mayotte)](https://www.insee.fr/fr/statistiques/3677855) by city, as of 2016-01-01, 
 in effect at 2019-01-01.
 * INSEE's table of [legal populations in Mayotte](https://www.insee.fr/fr/statistiques/3291775), as of 2017-01-01.
+* INSEE's [french activity classification (NAF)](https://www.data.gouv.fr/fr/datasets/nomenclature-dactivites-francaise-naf/)
+as of 2008-01-01.
+* INSEE's file of [juridical categories of legal units](https://www.insee.fr/fr/information/2028129), as of 2018-07-01.

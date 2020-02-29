@@ -10,20 +10,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item {{ \Route::current()->getName() == 'france' ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('france') }}">@lang('html.navbar.france')</a>
-                </li>
                 <li class="nav-item {{ \Route::current()->getName() == 'texts-context' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('texts-context') }}">@lang('html.navbar.context')</a>
                 </li>
                 <li class="nav-item {{ \Route::current()->getName() == 'texts-what-we-do' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('texts-what-we-do') }}">@lang('html.navbar.what-we-do')</a>
                 </li>
+                <li class="nav-item {{ \Route::current()->getName() == 'france' ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('france') }}">@lang('html.navbar.france')</a>
+                </li>
                 <li class="nav-item {{ \Route::current()->getName() == 'texts-how-to-help' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('texts-how-to-help') }}">@lang('html.navbar.how-to-help')</a>
-                </li>
-                <li class="nav-item {{ \Route::current()->getName() == 'texts-about' ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('texts-about') }}">@lang('html.navbar.about')</a>
                 </li>
             </ul>
         </div>

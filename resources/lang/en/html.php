@@ -1,15 +1,20 @@
 <?php
 
 return [
+    'caps' => [
+        'context' => 'Greenhouse gases, temperature rise, carbon budget and Paris Agreement ... why is this subject so important?',
+        'france' => "More than 6,000 organizations must publish their carbon assessments regularly ... are they keeping up?",
+        'how-to-help' => 'Buy, vote, choose, discuss, exchange, reread, verify, advocate, analyze, communicate, broadcast ... how to help?',
+        'what-we-do' => "Emission reports, regulatory obligations, Scope 1, 2 and 3, action plans ... how is this approach useful?",
+    ],
     'carbon' => 'Humanity must drastically and rapidly reduce its greenhouse gases emissions, to the point of reaching a neutral balance by the middle of the century, in order to have a chance to contain the rise in temperature to 2°C and limit the damages to Nature and humans.',
-    'description' => 'We monitor over time greenhouse gases emissions reports published by public and private organizations, and compare them with their legal obligations and their own commitments.',
+    'description' => 'We monitor over time greenhouse gases emissions reports published by public and private organizations, and compare them with their legal obligations and their own voluntary commitments.',
     'footer' => [
         'contact' => 'Contact us on :github, :twitter or by email at :email.',
+        'legal' => 'Legal mentions',
     ],
-    'jumbo' => [
-        'h2' => 'Emission reports around the world',
-        'france-title' => 'France',
-        'france-button' => 'Explore France data set',
+    'h1' => [
+        'france' => 'France',
     ],
     'h2' => [
         'explore' => 'Explore the data set',
@@ -20,8 +25,8 @@ return [
         'about' => 'About',
         'context' => 'Context',
         'france' => 'France',
-        'how-to-help' => 'How to help?',
-        'what-we-do' => 'What we do',
+        'how-to-help' => 'Act',
+        'what-we-do' => 'Approach',
     ],
     'search' => [
         'name' => 'Organization name',
@@ -35,6 +40,7 @@ return [
         ],
     ],
     'view-card' => [
+        'explore' => 'Explore',
         'view' => 'View',
         'search' => [
             'label' => 'Query the database by organization name, legal type and reporting or regulation status.',

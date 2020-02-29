@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="mb-5">
-        <h1>@lang('html.jumbo.france-title')</h1>
+        <h1>@lang('html.h1.france')</h1>
         <h2>@lang('html.h2.legal')</h2>
         @markdownFile('jumbo.france')
         <h2>@lang('html.h2.explore')</h2>
