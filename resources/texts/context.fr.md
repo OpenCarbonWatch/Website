@@ -6,10 +6,10 @@ un défi immense.
 
 ### Une concentration historique
 
-La concentration des gaz à effet de serre dans l'atmosphère est déjà plus élevée que jamais auparavant dans l'histoire des *homo sapiens* 
+Les concentrations de gaz à effet de serre dans l'atmosphère sont déjà plus élevées que jamais auparavant dans l'histoire des *homo sapiens* 
 (voir [Vital Signs of the Planet](https://climate.nasa.gov/vital-signs/carbon-dioxide/) pour la concentration de dioxyde de carbone en direct, 
 et des graphiques historiques couvrant les 800 000 années précédentes). 
-Cette concentration continuent d'augmenter chaque année, en réponse aux importantes émissions d'origine anthropique annuelles
+Ces concentrations continuent d'augmenter chaque année, en réponse aux importantes émissions d'origine anthropique annuelles
 (voir [Global Carbon Atlas](http://www.globalcarbonatlas.org/fr/CO2-emissions) pour une carte des émissions annuelles par pays).
 
 ### Une hausse de température déjà significative

@@ -4,12 +4,12 @@ Since the industrial revolution, human activities and societies have been struct
 with a strong impact on the climate. Preserving an inhabitable planet in the 21st century now represents an immense 
 challenge.
 
-### An historical concentration
+### A historical concentration
 
-The concentration of greenhouse gases in the atmosphere is already higher than ever during the history
+The concentrations of greenhouse gases in the atmosphere are already higher than ever during the history
 of *homo sapiens* (see  [Vital Signs of the Planet](https://climate.nasa.gov/vital-signs/carbon-dioxide/) 
 for the live concentration of carbon dioxyde and historical charts covering the previous 800,000
-years). This concentration continue to increase each year in response to significant annual anthropogenic emissions
+years). These concentrations continue to increase each year in response to significant annual anthropogenic emissions
 (see [Global Carbon Atlas](http://www.globalcarbonatlas.org/en/CO2-emissions) for a map of yearly
 emissions per country).
 
