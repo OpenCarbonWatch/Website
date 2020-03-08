@@ -1,6 +1,7 @@
 <template>
     <div class="form-group">
         <label for="activity">{{ lang('activity') }}</label>
+        (<a href="https://www.insee.fr/fr/metadonnees/nafr2/section/A">{{ lang('naf') }}</a>)
         <autocomplete :search="search" :getResultValue="getResultValue" :debounceTime=100 id="activity">
             <template #result="{ result, props }">
                 <li v-bind="props" class="autocomplete-result">
@@ -16,12 +17,14 @@
     const MIN_LENGTH = 1;
     const TRANSLATIONS = {
         'en': {
-            'activity': 'Main activity (NAF code)',
+            'activity': 'Main activity',
             'level': 'Level',
+            'naf': 'NAF code',
         },
         'fr': {
-            'geography': 'Activité principale (code NAF)',
+            'activity': 'Activité principale (code NAF)',
             'level': 'Niveau',
+            'naf': 'code NAF',
         },
     };
     export default {
