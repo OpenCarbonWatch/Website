@@ -9,6 +9,9 @@
             <label for="name">@lang('html.search.name')</label>
             <input id="name" name="name" class="form-control"/>
         </div>
+        <autocomplete-activity></autocomplete-activity>
+        <autocomplete-geography></autocomplete-geography>
+        <label>@lang('html.search.status')</label>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="search_among" id="search_among_concerned" value="concerned" checked>
             <label class="form-check-label" for="search_among_concerned">

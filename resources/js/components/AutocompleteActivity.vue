@@ -1,0 +1,44 @@
+<template>
+    <div class="form-group">
+        <label for="activity">{{ lang('activity') }}</label>
+        <autocomplete :search="search" :getResultValue="getResultValue" :debounceTime=100 id="activity">
+            <template #result="{ result, props }">
+                <li v-bind="props" class="autocomplete-result">
+                    <span class="badge badge-light">{{ lang('level') + ' ' + result.level }}</span>
+                    <span :style="'padding-left:' + (result.level * 10) + 'px;'">{{ result.label }}</span>
+                </li>
+            </template>
+        </autocomplete>
+    </div>
+</template>
+
+<script>
+    const MIN_LENGTH = 3;
+    const TRANSLATIONS = {
+        'en': {
+            'activity': 'Main activity (NAF code)',
+            'level': 'Level',
+        },
+        'fr': {
+            'geography': 'Activité principale (code NAF)',
+            'level': 'Niveau',
+        },
+    };
+    export default {
+        methods: {
+            lang(key) {
+                return TRANSLATIONS[document.documentElement.lang][key];
+            },
+            getResultValue(result) {
+                return result.label;
+            },
+            search: async function (value) {
+                return $.ajax({
+                    url: '/france/search/data/activity/' + encodeURIComponent(value),
+                    type: 'GET',
+                    data: {},
+                });
+            },
+        },
+    }
+</script>

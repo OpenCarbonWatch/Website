@@ -27,8 +27,26 @@ class HomeController extends Controller
     public function franceSearchResults(Request $request)
     {
         $name = $request->get('name');
-        $name = strtoupper($name);
-        $query = Organization::where('name', 'LIKE', '%' . $name . '%')->limit(5000);
+        $query = Organization::select('organizations.*')->where('name', 'ILIKE', "%$name%")->limit(5000);
+        $geography = $request->input('geography');
+        if ($geography && strlen($geography) >= 1) {
+            $query = $query->join('cities', 'cities.id', '=', 'organizations.city_id')->where(function ($query) use ($geography) {
+                $query->where('city_name', '=', $geography)
+                    ->orWhere('department_name', '=', $geography)
+                    ->orWhere('region_name', '=', $geography);
+            });
+        }
+        $activity = $request->input('activity');
+        if ($activity && strlen($activity) >= 1) {
+            $activity = explode(' ', $activity)[0];
+            $query = $query->join('activities', 'activities.id_5', '=', 'organizations.activity_id')->where(function ($query) use ($activity) {
+                $query->where('id_1', '=', $activity)
+                    ->orWhere('id_2', '=', $activity)
+                    ->orWhere('id_3', '=', $activity)
+                    ->orWhere('id_4', '=', $activity)
+                    ->orWhere('id_5', '=', $activity);
+            });
+        }
         if ($request->get('search_among') == 'concerned') {
             $query = $query->whereNotNull('regulation');
         }

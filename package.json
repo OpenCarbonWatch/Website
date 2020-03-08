@@ -1,4 +1,9 @@
 {
+    "babel": {
+        "plugins": [
+            "@babel/plugin-proposal-class-properties"
+        ]
+    },
     "private": true,
     "scripts": {
         "dev": "npm run development",
@@ -10,6 +15,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
         "axios": "^0.19.0",
         "bootstrap": "^4.3.1",
         "cross-env": "^5.2.1",
@@ -23,7 +29,7 @@
         "resolve-url-loader": "^2.3.2",
         "sass": "^1.22.12",
         "sass-loader": "^7.3.1",
-        "vue": "^2.6.10",
+        "vue": "^2.6.11",
         "vue-template-compiler": "^2.6.10"
     }
 }

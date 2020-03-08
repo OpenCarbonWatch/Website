@@ -36,3 +36,8 @@ Route::group([
     Route::get('/france/specialized-private', 'HomeController@franceSpecializedPrivate')->name('france-specialized-private');
     Route::get('/france/associations', 'HomeController@franceAssociations')->name('france-associations');
 });
+
+Route::group([], function() {
+    Route::get('/france/search/data/activity/{query}', 'SearchController@franceSearchDataActivity')->name('france-search-data-activity');
+    Route::get('/france/search/data/geography/{query}', 'SearchController@franceSearchDataGeography')->name('france-search-data-geography');
+});

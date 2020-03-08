@@ -29,15 +29,16 @@ return [
         'what-we-do' => 'Démarche',
     ],
     'search' => [
-        'name' => 'Nom de l\'organisation',
         'among_concerned' => 'Chercher parmi les organisations concernées par l\'obligation',
         'among_reported' => 'Chercher parmi les organisations ayant publié au moins un bilan',
         'among_all' => 'Chercher parmi toutes les organisations',
+        'name' => "Nom de l'organisation",
         'results' => [
             'title' => 'Résultats de la recherche',
             'none' => 'Aucun résultat pour la recherche',
             'overload' => 'Votre recherche renvoie un trop grand nombre de résultats. Seuls les 5000 premiers sont affichés. Pour analyser de plus gros volumes, téléchargez les données brutes depuis nos dépôts.',
         ],
+        'status' => 'Statut réglementaire et de publication',
     ],
     'view-card' => [
         'explore' => 'Explorer',

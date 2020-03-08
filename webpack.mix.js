@@ -19,7 +19,7 @@ mix
     .polyfill({
         enabled: true,
         useBuiltIns: "usage",
-        targets: {"firefox": "50", "ie": 11} // Compatibility with Internet explorer for method findIndex
+        targets: {"firefox": "50", "ie": 11}
     })
     .purgeCss()
     .version();

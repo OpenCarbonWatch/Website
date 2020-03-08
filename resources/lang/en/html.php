@@ -29,15 +29,16 @@ return [
         'what-we-do' => 'Approach',
     ],
     'search' => [
-        'name' => 'Organization name',
         'among_concerned' => 'Search among organizations for which reporting is mandatory',
         'among_reported' => 'Search among organizations having published at least one report',
         'among_all' => 'Search among all organizations',
+        'name' => 'Organization name',
         'results' => [
             'title' => 'Search results',
             'none' => 'No result found for query',
             'overload' => 'Your search query returned too many results. Only the first 5000 are displayed. To analyze larger volumes, download raw data from our repositories.',
         ],
+        'status' => 'Status with respect to regulation and publication',
     ],
     'view-card' => [
         'explore' => 'Explore',

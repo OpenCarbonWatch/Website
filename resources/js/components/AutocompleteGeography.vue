@@ -1,0 +1,52 @@
+<template>
+    <div class="form-group">
+        <label for="geography">{{ lang('geography') }}</label>
+        <autocomplete :search="search" :getResultValue="getResultValue" :debounceTime=100 id="geography">
+            <template #result="{ result, props }">
+                <li v-bind="props" class="autocomplete-result">
+                    {{ result.label }}
+                    <span v-if="result.class==='region'" class="badge badge-warning">{{ lang('region') }}</span>
+                    <span v-if="result.class==='department'" class="badge badge-light">{{ lang('department') }}</span>
+                    <span v-if="result.class==='city'" class="badge badge-info">{{ result.badge }}</span>
+                </li>
+            </template>
+        </autocomplete>
+    </div>
+</template>
+
+<script>
+    const MIN_LENGTH = 3;
+    const TRANSLATIONS = {
+        'en': {
+            'department': 'Department',
+            'geography': 'Headquarters region, departement or city',
+            'region': 'Region',
+        },
+        'fr': {
+            'department': 'Département',
+            'geography': 'Région, département ou commune du siège',
+            'region': 'Région',
+        },
+    };
+    export default {
+        methods: {
+            lang(key) {
+                return TRANSLATIONS[document.documentElement.lang][key];
+            },
+            getResultValue(result) {
+                return result.label;
+            },
+            search: async function (value) {
+                if (value.length >= MIN_LENGTH) {
+                    return $.ajax({
+                        url: '/france/search/data/geography/' + encodeURIComponent(value),
+                        type: 'GET',
+                        data: {},
+                    });
+                } else {
+                    return [];
+                }
+            },
+        },
+    }
+</script>
