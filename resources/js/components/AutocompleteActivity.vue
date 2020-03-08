@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    const MIN_LENGTH = 1;
+    const MIN_LENGTH = 2;
     const TRANSLATIONS = {
         'en': {
             'activity': 'Main activity',

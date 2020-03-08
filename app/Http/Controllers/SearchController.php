@@ -10,30 +10,33 @@ class SearchController extends Controller
 {
     public function franceSearchDataActivity(string $query)
     {
-        $activities = Activity::where('label_1', 'ILIKE', "%$query%")
-            ->orWhere('label_2', 'ILIKE', "%$query%")
-            ->orWhere('label_3', 'ILIKE', "%$query%")
-            ->orWhere('label_4', 'ILIKE', "%$query%")
-            ->orWhere('label_5', 'ILIKE', "%$query%")
-            ->orWhere('id_1', 'ILIKE', "%$query%")
-            ->orWhere('id_2', 'ILIKE', "%$query%")
-            ->orWhere('id_3', 'ILIKE', "%$query%")
-            ->orWhere('id_4', 'ILIKE', "%$query%")
-            ->orWhere('id_5', 'ILIKE', "%$query%")
-            ->orderBy('id_1')
-            ->orderBy('id_2')
-            ->orderBy('id_3')
-            ->orderBy('id_4')
-            ->orderBy('id_5')
-            ->get();
+        if (preg_match('/[0-9]{2}.*/', $query)) {
+            // Match based on id
+            $maxLevel = 5;
+            $activities = Activity::where('id_5', 'ILIKE', "$query%")
+                ->orderBy('id_1')->orderBy('id_5')
+                ->get();
+        } else {
+            // Match based on name
+            $maxLevel = 2;
+            $activities = Activity::where('label_1', 'ILIKE', "%$query%")
+                ->orWhere('label_2', 'ILIKE', "%$query%")
+                ->orWhere('label_3', 'ILIKE', "%$query%")
+                ->orWhere('label_4', 'ILIKE', "%$query%")
+                ->orWhere('label_5', 'ILIKE', "%$query%")
+                ->orderBy('id_1')->orderBy('id_5')
+                ->get();
+        }
         $previous = [1 => null, 2 => null, 3 => null, 4 => null, 5 => null];
         $results = [];
         foreach ($activities as $activity) {
             foreach ([1, 2, 3, 4, 5] as $level) {
-                $label = $activity->getAttribute("id_$level") . ' ' . $activity->getAttribute("label_$level");
-                if ($previous[$level] != $label) {
-                    $previous[$level] = $label;
-                    $results[] = ['label' => $label, 'level' => $level];
+                if ($level <= $maxLevel) {
+                    $label = $activity->getAttribute("id_$level") . ' ' . $activity->getAttribute("label_$level");
+                    if ($previous[$level] != $label) {
+                        $previous[$level] = $label;
+                        $results[] = ['label' => $label, 'level' => $level];
+                    }
                 }
             }
         }
