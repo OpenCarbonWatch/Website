@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    const MIN_LENGTH = 3;
+    const MIN_LENGTH = 1;
     const TRANSLATIONS = {
         'en': {
             'activity': 'Main activity (NAF code)',
@@ -33,11 +33,15 @@
                 return result.label;
             },
             search: async function (value) {
-                return $.ajax({
-                    url: '/france/search/data/activity/' + encodeURIComponent(value),
-                    type: 'GET',
-                    data: {},
-                });
+                if (value.length >= MIN_LENGTH) {
+                    return $.ajax({
+                        url: '/france/search/data/activity/' + encodeURIComponent(value),
+                        type: 'GET',
+                        data: {},
+                    });
+                } else {
+                    return [];
+                }
             },
         },
     }
