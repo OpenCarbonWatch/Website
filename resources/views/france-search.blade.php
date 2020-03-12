@@ -3,7 +3,7 @@
 @section('content')
     <div class="mb-5">
         <h2>@lang('html.view-card.search.title')</h2>
-        {{ Form::open(['route' => 'france-search-results']) }}
+        {{ Form::open(['route' => 'france-search-build']) }}
         {{ Form::token() }}
         <div class="form-group">
             <label for="name">@lang('html.search.name')</label>

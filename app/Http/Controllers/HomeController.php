@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Organization;
+use App\Model\Search;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -24,21 +25,57 @@ class HomeController extends Controller
         return view('france-search');
     }
 
-    public function franceSearchResults(Request $request)
+    public function franceBuildSearchObject(Request $request)
     {
-        $name = $request->get('name');
-        $query = Organization::select('organizations.*')->where('name', 'ILIKE', "%$name%")->limit(5000);
+        $payload = [];
+        $name = $request->input('name');
+        if ($name && strlen($name) > 0) {
+            $payload['organization_name'] = "%$name%";
+        }
         $geography = $request->input('geography');
         if ($geography && strlen($geography) >= 1) {
+            $payload['geography_name'] = $geography;
+        }
+        $activity = $request->input('activity');
+        if ($activity && strlen($activity) >= 1) {
+            $activity = explode(' ', $activity)[0];
+            $payload['activity_id'] = $activity;
+        }
+        $payload['search_among'] = $request->input('search_among');
+        $payload = json_encode($payload);
+        $search = Search::where('payload', $payload)->first();
+        if ($search === null) {
+            $search = new Search();
+            $search->version = '1.0';
+            $search->payload = $payload;
+            $search->created_count = 1;
+            $search->viewed_count = 0;
+        } else {
+            $search->created_count += 1;
+        }
+        $search->save();
+        return redirect(route('france-search-results', ['search' => $search->id]));
+    }
+
+    public function franceViewSearchResults(Search $search)
+    {
+        $search->viewed_count += 1;
+        $search->save();
+        $payload = json_decode($search->payload, true);
+        $query = Organization::select('organizations.*')->limit(5000);
+        if (array_key_exists('organization_name', $payload)) {
+            $query = $query->where('name', 'ILIKE', $payload['organization_name']);
+        }
+        if (array_key_exists('geography_name', $payload)) {
+            $geography = $payload['geography_name'];
             $query = $query->join('cities', 'cities.id', '=', 'organizations.city_id')->where(function ($query) use ($geography) {
                 $query->where('city_name', '=', $geography)
                     ->orWhere('department_name', '=', $geography)
                     ->orWhere('region_name', '=', $geography);
             });
         }
-        $activity = $request->input('activity');
-        if ($activity && strlen($activity) >= 1) {
-            $activity = explode(' ', $activity)[0];
+        if (array_key_exists('activity_id', $payload)) {
+            $activity = $payload['activity_id'];
             $query = $query->join('activities', 'activities.id_5', '=', 'organizations.activity_id')->where(function ($query) use ($activity) {
                 $query->where('id_1', '=', $activity)
                     ->orWhere('id_2', '=', $activity)
@@ -47,10 +84,10 @@ class HomeController extends Controller
                     ->orWhere('id_5', '=', $activity);
             });
         }
-        if ($request->get('search_among') == 'concerned') {
+        if ($payload['search_among'] == 'concerned') {
             $query = $query->whereNotNull('regulation');
         }
-        if ($request->get('search_among') == 'reported') {
+        if ($payload['search_among'] == 'reported') {
             $query = $query->whereHas('assessments');
         }
         return $this->showResults('html.search.results.title', $query);
