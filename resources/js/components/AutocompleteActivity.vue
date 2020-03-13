@@ -22,7 +22,7 @@
             'naf': 'NAF code',
         },
         'fr': {
-            'activity': 'Activité principale (code NAF)',
+            'activity': 'Activité principale',
             'level': 'Niveau',
             'naf': 'code NAF',
         },
