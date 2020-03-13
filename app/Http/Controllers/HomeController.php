@@ -7,6 +7,7 @@ use App\Model\Search;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Vinkla\Hashids\Facades\Hashids;
 
 class HomeController extends Controller
 {
@@ -50,11 +51,15 @@ class HomeController extends Controller
             $search->payload = $payload;
             $search->created_count = 1;
             $search->viewed_count = 0;
+            $search->hashid = '';
+            $search->save();
+            $search->hashid = Hashids::encode($search->id);
+            $search->save();
         } else {
             $search->created_count += 1;
+            $search->save();
         }
-        $search->save();
-        return redirect(route('france-search-results', ['search' => $search->id]));
+        return redirect(route('france-search-results', ['search' => $search->hashid]));
     }
 
     public function franceViewSearchResults(Search $search)

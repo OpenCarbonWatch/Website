@@ -15,6 +15,7 @@ class CreateMetaTables extends Migration
     {
         Schema::create('searches', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('hashid');
             $table->string('version');
             $table->text('payload');
             $table->integer('created_count');

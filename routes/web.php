@@ -26,7 +26,7 @@ Route::group([
     Route::get('/france', 'HomeController@france')->name('france');
     Route::get('/france/search', 'HomeController@franceSearch')->name('france-search');
     Route::post('/france/search', 'HomeController@franceBuildSearchObject')->name('france-search-build');
-    Route::get('/france/search/{search}', 'HomeController@franceViewSearchResults')->name('france-search-results');
+    Route::get('/france/search/{search:hashid}', 'HomeController@franceViewSearchResults')->name('france-search-results');
     Route::get('/france/organizations/{id}', 'HomeController@franceOrganization')->name('france-organization');
     Route::get('/france/regions-departments', 'HomeController@franceRegionsDepartments')->name('france-regions-departments');
     Route::get('/france/cities', 'HomeController@franceCities')->name('france-cities');
