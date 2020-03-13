@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "ext-gmp": "*",
         "ext-json": "*",
         "erusev/parsedown": "^1.7",
         "fideloper/proxy": "^4.0",
