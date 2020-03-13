@@ -22,7 +22,6 @@
                     {{ $stats['light'] }}
                 </div>
             </div>
-            <p><i>@lang('results.disclaimer')</i></p>
             @if (count($results) >= 5000)
                 <div class="alert alert-warning">
                     @lang('html.search.results.overload')
@@ -33,38 +32,28 @@
                     <thead>
                     <tr>
                         <th>@lang('results.th.name')</th>
-                        <th>@lang('results.th.city')</th>
-                        <th>@lang('results.th.last_year')</th>
-                        <th>@lang('results.th.reductions')</th>
-                        <th>@lang('results.th.scope3')</th>
+                        <th class="text-center">@lang('results.th.last_year')</th>
+                        <th class="text-center">@lang('results.th.reductions')</th>
+                        <th class="text-center">@lang('results.th.scope3')</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($results as $result)
                         <tr>
-                            <td title="{{ $result['organization']->name }}">
+                            <td title="{{ $result['longLabel'] }}">
                                 <!-- For CSS purifier: badge-danger badge-warning badge-success badge-light -->
                                 <span class="badge badge-pill badge-{{ $result['status'] }} mr-1">&nbsp;</span>
-                                <a href="{{ route('france-organization', ['id' => $result['organization']->id]) }}">
-                                    @if (strlen($result['organization']->name) > 70)
-                                        {{ substr($result['organization']->name, 0, 60) . ' ...' }}
-                                    @else
-                                        {{ $result['organization']->name }}
-                                    @endif
-                                </a>
+                                <a href="{{ route('france-organization', ['id' => $result['organization']->id]) }}">{{ $result['shortLabel'] }}</a>
                             </td>
-                            <td>
-                                {{ $result['organization']->city_id }}
-                            </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $result['year'] ?? '' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 @if ($result['year'] != null)
                                     {{ $result['reductions'] ? trans('results.yes') : trans('results.no') }}
                                 @endif
                             </td>
-                            <td>
+                            <td class="text-center">
                                 @if ($result['year'] != null)
                                     {{ $result['scope3'] ? trans('results.yes') : trans('results.no') }}
                                 @endif
@@ -74,6 +63,7 @@
                     </tbody>
                 </table>
             </div>
+            <p><i>@lang('results.disclaimer')</i></p>
         @else
             <div class="alert alert-warning">
                 @lang('html.search.results.none')

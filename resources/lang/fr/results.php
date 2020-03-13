@@ -7,7 +7,7 @@ return [
         'split_year' => 'Cette organisation a plusieurs bilans pour la même année. Parfois, cela signifie que des bilans ont été réalisés sur des sous-entités séparément. Faites attention en interprétant les bilans.',
         'is_draft' => '* Ce bilan est encore au stade de brouillon et n\'a pas été définitivement publié par l\'organisation.',
     ],
-    'disclaimer' => 'Les résultats suivants sont obtenus par consolidation de multiples sources de données (voir nos <a href="https://github.com/OpenCarbonWatch">dépôts GitHub</a> pour plus de détails). Ils peuvent être considérés comme des indices, mais ne sauraient en aucun cas être interprêtés comme des assertions affirmant qu\'une organisation donnée ne respecte pas la législation actuelle. En effet, les données publiquement disponibles ne sont pas suffisantes pour déterminer avec certitude si une organisation donnée dépasse les seuils réglementaires.</i>',
+    'disclaimer' => 'Les résultats ci-contre sont obtenus par consolidation de multiples sources de données (voir nos <a href="https://github.com/OpenCarbonWatch">dépôts GitHub</a> pour plus de détails). Ils peuvent être considérés comme des indices, mais ne sauraient en aucun cas être interprêtés comme des assertions affirmant qu\'une organisation donnée ne respecte pas la législation actuelle. En effet, les données publiquement disponibles ne sont pas toujours suffisantes pour déterminer avec certitude si une organisation donnée dépasse les seuils réglementaires.',
     'identity-card' => [
         'id' => 'SIREN :',
         'activity' => 'Activité principale (code NAF) :',

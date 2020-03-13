@@ -7,7 +7,7 @@ return [
         'split_year' => 'This organization has multiple reports for the same year. Sometimes, this is due to reporting separately data for multiple child organizations. Be careful when interpreting reports.',
         'is_draft' => '* This report is still a draft and has not yet been definitively published by the organization.',
     ],
-    'disclaimer' => '<i>The following results are obtained by data consolidation techniques from multiples sources (see our <a href="https://github.com/OpenCarbonWatch">GitHub repositories</a> for more details). They can be considered as hints, but should by no means be interpreted as statements of whether each organization currently complies or not with the legislation. Indeed, publicly available data are insufficient to assert whether each organization exceeds or not the regulation thresholds.</i>',
+    'disclaimer' => 'The present results are obtained by data consolidation techniques from multiples sources (see our <a href="https://github.com/OpenCarbonWatch">GitHub repositories</a> for more details). They can be considered as hints, but should by no means be interpreted as statements of whether each organization currently complies or not with the legislation. Indeed, publicly available data are sometimes insufficient to assert whether each organization exceeds or not the regulation thresholds.</i>',
     'identity-card' => [
         'id' => 'SIREN Identifier:',
         'activity' => 'Main activity (NAF code):',

@@ -100,18 +100,29 @@ class HomeController extends Controller
 
     public function franceRegionsDepartments()
     {
-        $query = Organization::whereIn('legal_type_id', ['7220', '7229', '7230']);
+        // Keep "departments", "regions" and "other territorial collectivities" (e.g. Corsica), but exclude Paris and
+        // Lyon, which we decide to report as cities, despite the fact that they are officially considered as "other
+        // territorial collectivities".
+        $query = Organization::whereIn('legal_type_id', ['7220', '7229', '7230'])
+            ->whereNotIn('id', ['200046977', '217500016']);
         return $this->organizations('regions-departments', $query);
     }
 
     public function franceCities()
     {
-        $query = Organization::whereIn('legal_type_id', ['7210']);
+        // Keep "cities" and include Paris and Lyon, which we decide to report as cities, despite the fact that they
+        // are officially considered as "other territorial collectivities".
+        $query = Organization::where(function ($query) {
+            return $query->where('legal_type_id', '7210')
+                ->orWhereIn('id', ['200046977', '217500016']);
+        });
         return $this->organizations('cities', $query);
     }
 
     public function franceCityGroups()
     {
+        // Keep only the four city group types for which reporting is mandatory: "communautés de communes",
+        // "communautés d'agglomérations", "communautés urbaines" and "métropoles".
         $query = Organization::whereIn('legal_type_id', ['7343', '7344', '7346', '7348']);
         return $this->organizations('city-groups', $query);
     }
@@ -159,7 +170,7 @@ class HomeController extends Controller
     private function showResults($title, Builder $query)
     {
         $organizations = $query
-            ->with(['assessments', 'legalType'])
+            ->with(['assessments', 'legalType', 'city'])
             ->orderBy('name')
             ->get()->all();
         $results = [];
@@ -193,10 +204,44 @@ class HomeController extends Controller
             }
             $stats[$status] = $stats[$status] + 1;
             $stats['total'] = $stats['total'] + 1;
-            $result = compact('organization', 'status', 'year', 'scope3', 'reductions');
+            $shortLabel = $organization->name;
+            $longLabel = $organization->name;
+            if (strlen($shortLabel) > 62) {
+                $shortLabel = substr($shortLabel, 0, 58) . ' ...';
+            }
+            if ($organization->city) {
+                $longLabel .= ' [' . $organization->city->department_name . ', ' . $organization->city->city_name . ']';
+            }
+            $result = compact('organization', 'status', 'shortLabel', 'longLabel', 'year', 'scope3', 'reductions');
             $results[] = $result;
         }
+        $results = $this->disambiguateLabelsUsingDepartments($results);
         return view('results', compact('title', 'results', 'stats'));
+    }
+
+    private function disambiguateLabelsUsingDepartments($results)
+    {
+        $duplicated = [];
+        $lastLabel = '';
+        foreach ($results as $result) {
+            if ($result['shortLabel'] === $lastLabel) {
+                $duplicated[$lastLabel] = true;
+            }
+            $lastLabel = $result['shortLabel'];
+        }
+        for ($i = 0; $i < count($results); $i++) {
+            if (array_key_exists($results[$i]['shortLabel'], $duplicated)) {
+                $city = $results[$i]['organization']->city;
+                if ($city) {
+                    $department = substr($city->id, 0, 3);
+                    if (substr($department, 0, 2) !== '97') {
+                        $department = substr($department, 0, 2);
+                    }
+                    $results[$i]['shortLabel'] .= ' [' . $department . ']';
+                }
+            }
+        }
+        return $results;
     }
 
     public function franceOrganization($id)
