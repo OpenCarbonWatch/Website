@@ -80,6 +80,7 @@ server {
         fastcgi_param   PATH_INFO       $fastcgi_path_info;
         fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
     }
+    access_log /var/etc/nginx/ocw/access.log;
 }
 ```
 
