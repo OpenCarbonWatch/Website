@@ -59,7 +59,7 @@ server {
     server_name opencarbonwatch.org;
     client_max_body_size 100M;
     gzip on;
-    gzip_types text/plain text/css application/javascript text/html application/xml;
+    gzip_types text/plain text/css application/javascript application/xml;
     root /srv/ocw/public;
     index index.php index.html index.htm index.nginx-debian.html;
     location / {
