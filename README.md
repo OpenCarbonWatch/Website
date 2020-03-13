@@ -94,11 +94,13 @@ certbot
 ```bash
 sudo su postgres
 psql -d ocw -c "TRUNCATE activities, cities, legal_types, assessment_organization, assessments, organizations;"
+psql -d ocw -c "DROP INDEX IF EXISTS idx_organizations_name;"
 psql -d ocw -c "COPY activities FROM '/home/data/activities.csv' CSV HEADER;"
 psql -d ocw -c "COPY cities FROM '/home/data/cities.csv' CSV HEADER;"
 psql -d ocw -c "COPY legal_types FROM '/home/data/legal_types.csv' CSV HEADER;"
 psql -d ocw -c "COPY assessments FROM '/home/data/assessments.csv' CSV HEADER;"
 psql -d ocw -c "COPY organizations FROM '/home/data/organizations.csv' CSV HEADER;"
 psql -d ocw -c "COPY assessment_organization FROM '/home/data/assessment_organization.csv' CSV HEADER;"
+psql -d ocw -c "CREATE INDEX idx_organizations_name ON organizations USING gin (name gin_trgm_ops);"
 ```
 
