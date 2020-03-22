@@ -110,11 +110,11 @@ class HomeController extends Controller
 
     public function franceCities()
     {
-        // Keep "cities" and include Paris and Lyon, which we decide to report as cities, despite the fact that they
-        // are officially considered as "other territorial collectivities".
+        // Keep "cities" and include Paris, which we decide to report as a city, despite the fact that it is officially
+        // considered as an "other territorial collectivity".
         $query = Organization::where(function ($query) {
             return $query->where('legal_type_id', '7210')
-                ->orWhereIn('id', ['200046977', '217500016']);
+                ->orWhere('id', '217500016');
         });
         return $this->organizations('cities', $query);
     }
@@ -122,8 +122,12 @@ class HomeController extends Controller
     public function franceCityGroups()
     {
         // Keep only the four city group types for which reporting is mandatory: "communautés de communes",
-        // "communautés d'agglomérations", "communautés urbaines" and "métropoles".
-        $query = Organization::whereIn('legal_type_id', ['7343', '7344', '7346', '7348']);
+        // "communautés d'agglomérations", "communautés urbaines" and "métropoles" and add "Métropole de Lyon", we
+        // which decide to report as a city group despite the fact that it is an "other territorial collectivity".
+        $query = Organization::where(function ($query) {
+            return $query->whereIn('legal_type_id', ['7343', '7344', '7346', '7348'])
+                ->orWhere('id', '200046977');
+        });
         return $this->organizations('city-groups', $query);
     }
 
