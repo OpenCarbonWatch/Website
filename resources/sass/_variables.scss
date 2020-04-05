@@ -1,9 +1,12 @@
-$black: #000500;
-$dark: #362417;
-$primary: #92817a;
-$light: #f1dabf;
-$white: #fffbff;
-$info: #aee5d8;
+$black: #000000;
+$dark: #596e79;
+$primary: #c7b198;
+$light: #dfd3c3;
+$white: #f0ece2;
+$info: #add8d8;
 
 // Restore default strong blue link color (and not primary color)
 $link-color: #0d6efd;
+
+$navbar-dark-color: $white;
+$navbar-dark-hover-color: #ffffff;
