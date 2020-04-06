@@ -6,8 +6,8 @@
     <meta name="description" content="@lang('html.description')"/>
     <meta name="author" content="Open Carbon Watch"/>
     <title>Open Carbon Watch</title>
-    <link href="/favicon.ico" rel="icon" type="image/ico"/>
-    <link href="/favicon.ico" rel="shortcut icon" type="image/ico"/>
+    <link href="{{ url('/img/logo.svg') }}" rel="icon" type="image/svg+xml"/>
+    <link href="{{ url('/img/logo.svg') }}" rel="shortcut icon" type="image/svg+xml"/>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet"/>
 </head>
 <body>
