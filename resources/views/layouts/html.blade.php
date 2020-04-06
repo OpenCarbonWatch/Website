@@ -11,10 +11,12 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet"/>
 </head>
 <body>
-@include('layouts.navbar')
-<div id="app" class="container">
-    @yield('content')
-    @include('layouts.footer')
+<div id="app">
+    @include('layouts.navbar')
+    <div class="container">
+        @yield('content')
+        @include('layouts.footer')
+    </div>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>

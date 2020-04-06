@@ -37,11 +37,7 @@
             },
             search: async function (value) {
                 if (value.length >= MIN_LENGTH) {
-                    return $.ajax({
-                        url: '/france/search/data/activity/' + encodeURIComponent(value),
-                        type: 'GET',
-                        data: {},
-                    });
+                    return (await axios.get('/france/search/data/activity/' + encodeURIComponent(value))).data;
                 } else {
                     return [];
                 }

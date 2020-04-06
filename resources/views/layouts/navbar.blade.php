@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="/img/logo.svg" alt="" width="30px"/>
+            <img src="{{ url('/img/logo.svg') }}" alt="binoculars logo" width="30px"/>
             Open Carbon Watch
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                onclick="document.querySelector('#navbarSupportedContent').classList.toggle('collapse');">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">

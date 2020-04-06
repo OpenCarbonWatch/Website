@@ -38,11 +38,7 @@
             },
             search: async function (value) {
                 if (value.length >= MIN_LENGTH) {
-                    return $.ajax({
-                        url: '/france/search/data/geography/' + encodeURIComponent(value),
-                        type: 'GET',
-                        data: {},
-                    });
+                    return (await axios.get('/france/search/data/geography/' + encodeURIComponent(value))).data;
                 } else {
                     return [];
                 }
