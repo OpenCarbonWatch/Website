@@ -159,7 +159,7 @@ class AutocompleteCore {
   // Make sure selected result isn't scrolled out of view
   checkSelectedResultVisible = resultsElement => {
     const selectedResultElement = resultsElement.querySelector(
-      `[data-result-index="${this.selectedIndex}"]`
+      '[data-result-index="' + this.selectedIndex+ '"]'
     );
     if (!selectedResultElement) {
       return

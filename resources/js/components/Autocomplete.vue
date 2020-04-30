@@ -57,10 +57,6 @@ export default {
       type: Function,
       required: true,
     },
-    baseClass: {
-      type: String,
-      default: 'autocomplete',
-    },
     autoSelect: {
       type: Boolean,
       default: false,
@@ -98,7 +94,7 @@ export default {
     return {
       core,
       value: this.defaultValue,
-      resultListId: uniqueId(`${this.baseClass}-result-list-`),
+      resultListId: uniqueId('autocomplete-result-list-'),
       results: [],
       selectedIndex: -1,
       expanded: false,
@@ -111,7 +107,7 @@ export default {
   computed: {
     rootProps() {
       return {
-        class: this.baseClass,
+        class: 'autocomplete',
         style: { position: 'relative' },
         'data-expanded': this.expanded,
         'data-loading': this.loading,
@@ -120,7 +116,7 @@ export default {
     },
     inputProps() {
       return {
-        class: `${this.baseClass}-input`,
+        class: 'autocomplete-input',
         value: this.value,
         role: 'combobox',
         autocomplete: 'off',
@@ -150,7 +146,7 @@ export default {
       const yPosition = this.position === 'below' ? 'top' : 'bottom';
       return {
         id: this.resultListId,
-        class: `${this.baseClass}-result-list`,
+        class: 'autocomplete-result-list',
         role: 'listbox',
         style: {
           position: 'absolute',
@@ -170,8 +166,8 @@ export default {
     },
     resultProps() {
       return this.results.map((result, index) => ({
-        id: `${this.baseClass}-result-${index}`,
-        class: `${this.baseClass}-result`,
+        id: 'autocomplete-result-' + index,
+        class: 'autocomplete-result',
         'data-result-index': index,
         role: 'option',
         ...(this.selectedIndex === index ? { 'aria-selected': 'true' } : {}),
