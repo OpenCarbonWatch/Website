@@ -21,7 +21,6 @@
         "bootstrap": "^4.4.1",
         "cross-env": "^7.0.2",
         "es6-promise": "^4.2.8",
-        "jquery": "^3.4.1",
         "laravel-mix": "^5.0.4",
         "laravel-mix-purgecss": "^5.0.0-rc.1",
         "popper.js": "^1.16.1",
