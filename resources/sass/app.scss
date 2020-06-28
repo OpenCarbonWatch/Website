@@ -45,17 +45,25 @@ nav a {
     color: $light;
 }
 
-.jumbo-logo {
-    width: 80%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.navbar-brand {
+    background: url('/img/logo.svg') left center no-repeat;
+    background-size: 2rem;
+    padding-left: 2.5rem;
 }
 
-#jumbo .light {
+#jumbo {
     background-color: $light;
     color: $dark;
     font-size: 1.25rem;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+@media (min-width: 992px) {
+    #jumbo {
+        background: $light url('/img/logo.svg') right 2rem top 2rem no-repeat;
+        background-size: 8rem;
+        padding-right: 13rem;
+    }
 }
 
 #footer {
