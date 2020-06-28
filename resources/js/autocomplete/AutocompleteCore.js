@@ -59,6 +59,11 @@ class AutocompleteCore {
         break
       }
       case 'Enter': {
+          // Only prevent default event when the "Enter" keystroke is to select an item. Let the second "Enter" validate
+          // the HTML form and submit query.
+          if (this.selectedIndex !== -1) {
+              event.preventDefault();
+          }
         const selectedResult = this.results[this.selectedIndex];
         this.selectResult();
         this.onSubmit(selectedResult);

@@ -13,6 +13,15 @@ a {
     text-decoration: underline;
 }
 
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
+}
+
 .btn {
     border-radius: 0;
     text-decoration: none;
@@ -27,12 +36,16 @@ a {
     text-align: left;
 }
 
-nav a {
+.nav-link {
     text-decoration: none;
 }
 
-.navbar-dark .active .nav-link {
+.nav-link:hover, .nav-link:focus {
     text-decoration: underline;
+}
+
+.navbar-dark .active .nav-link {
+    font-weight: bold;
 }
 
 .navbar-dark .navbar-brand {
@@ -43,6 +56,11 @@ nav a {
     background: url('/img/logo.svg') left center no-repeat;
     background-size: 2rem;
     padding-left: 2.5rem;
+    text-decoration: none;
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+    text-decoration: underline;
 }
 
 #jumbo {
@@ -76,4 +94,10 @@ nav a {
 .lang a {
     color: $white;
     text-decoration: none;
+}
+
+// Forms
+
+.form-control:focus {
+    background-color: #ffffff;
 }

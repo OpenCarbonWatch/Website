@@ -252,14 +252,6 @@
         flex: 1;
     }
 
-    .autocomplete-input:focus,
-    .autocomplete-input[aria-expanded="true"] {
-        border-color: rgba(0, 0, 0, 0.12);
-        background-color: #fff;
-        outline: none;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
-    }
-
     [data-position="below"] .autocomplete-input[aria-expanded="true"] {
         border-bottom-color: transparent;
         border-radius: 8px 8px 0 0;
