@@ -14,7 +14,7 @@ return [
         'legal' => 'Legal mentions',
     ],
     'h1' => [
-        'france' => 'France',
+        'france' => 'Carbon reporting in France',
     ],
     'h2' => [
         'explore' => 'Explore the data set',
@@ -50,7 +50,7 @@ return [
         ],
         'regions-departments' => [
             'label' => 'All french regions and departments must perform 3-years carbon reporting',
-            'title' => 'Regions, departments',
+            'title' => 'Regions and departments',
         ],
         'city-groups' => [
             'label' => 'City groups of more than 50,000 inhabitants must perform 3-years carbon reporting.',

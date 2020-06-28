@@ -1,5 +1,7 @@
 @extends('layouts.html')
 
+@section('title', trans('titles.organization', ['name' => $organization->name]))
+
 @section('content')
     <div class="mb-5">
         <h2>{{ $organization->name }}</h2>

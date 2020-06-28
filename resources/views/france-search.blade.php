@@ -1,5 +1,7 @@
 @extends('layouts.html')
 
+@section('title', trans('titles.france.search'))
+
 @section('content')
     <div class="mb-5">
         <h2>@lang('html.view-card.search.title')</h2>

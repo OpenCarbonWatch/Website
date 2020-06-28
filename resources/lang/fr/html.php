@@ -14,7 +14,7 @@ return [
         'legal' => 'Mentions légales',
     ],
     'h1' => [
-        'france' => 'France',
+        'france' => 'Bilans carbone en France',
     ],
     'h2' => [
         'explore' => 'Explorez les données',
@@ -50,7 +50,7 @@ return [
         ],
         'regions-departments' => [
             'label' => 'Toutes les régions et les départements de France doivent faire un bilan tous les 3 ans.',
-            'title' => 'Régions, départements',
+            'title' => 'Régions et départements',
         ],
         'city-groups' => [
             'label' => 'Les intercommunalités de plus de 50&nbsp;000 doivent faire un bilan tous les 3 ans.',

@@ -1,5 +1,7 @@
 @extends('layouts.html')
 
+@section('title', trans($title) . ' - France')
+
 @section('content')
     <div class="mb-5">
         <h2>@lang($title) ({{ count($results) }})</h2>

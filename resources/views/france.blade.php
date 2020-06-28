@@ -1,5 +1,7 @@
 @extends('layouts.html')
 
+@section('title', trans('titles.france.home'))
+
 @section('content')
     <div class="mb-5">
         <h1>@lang('html.h1.france')</h1>
