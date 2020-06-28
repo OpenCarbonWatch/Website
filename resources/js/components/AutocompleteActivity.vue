@@ -1,7 +1,5 @@
 <template>
     <div class="form-group">
-        <label for="activity">{{ lang('activity') }}</label>
-        (<a href="https://www.insee.fr/fr/metadonnees/nafr2/section/A">{{ lang('naf') }}</a>)
         <autocomplete :search="search" :getResultValue="getResultValue" :debounceTime=100 id="activity">
             <template #result="{ result, props }">
                 <li v-bind="props" class="autocomplete-result">
@@ -9,11 +7,16 @@
                     <span :style="'padding-left:' + (result.level * 10) + 'px;'">{{ result.label }}</span>
                 </li>
             </template>
+            <template #label>
+                {{ lang('activity') }}
+                (<a href="https://www.insee.fr/fr/metadonnees/nafr2/section/A">{{ lang('naf') }}</a>)
+            </template>
         </autocomplete>
     </div>
 </template>
 
 <script>
+    import Autocomplete from "./Autocomplete";
     const MIN_LENGTH = 2;
     const TRANSLATIONS = {
         'en': {
@@ -28,6 +31,7 @@
         },
     };
     export default {
+        components: {Autocomplete},
         methods: {
             lang(key) {
                 return TRANSLATIONS[document.documentElement.lang][key];

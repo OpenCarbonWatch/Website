@@ -1,6 +1,5 @@
 <template>
     <div class="form-group">
-        <label for="geography">{{ lang('geography') }}</label>
         <autocomplete :search="search" :getResultValue="getResultValue" :debounceTime=100 id="geography">
             <template #result="{ result, props }">
                 <li v-bind="props" class="autocomplete-result">
@@ -10,16 +9,20 @@
                     <span v-if="result.class==='city'" class="badge badge-info">{{ result.badge }}</span>
                 </li>
             </template>
+            <template #label>
+                {{ lang('geography') }}
+            </template>
         </autocomplete>
     </div>
 </template>
 
 <script>
+    import Autocomplete from "./Autocomplete";
     const MIN_LENGTH = 3;
     const TRANSLATIONS = {
         'en': {
             'department': 'Department',
-            'geography': 'Headquarters region, departement or city',
+            'geography': 'Headquarters region, department or city',
             'region': 'Region',
         },
         'fr': {
@@ -29,6 +32,7 @@
         },
     };
     export default {
+        components: {Autocomplete},
         methods: {
             lang(key) {
                 return TRANSLATIONS[document.documentElement.lang][key];
