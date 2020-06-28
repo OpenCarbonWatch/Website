@@ -22,12 +22,12 @@
         'en': {
             'activity': 'Main activity',
             'level': 'Level',
-            'naf': 'NAF code',
+            'naf': 'NAF codes list',
         },
         'fr': {
             'activity': 'Activité principale',
             'level': 'Niveau',
-            'naf': 'code NAF',
+            'naf': 'liste des codes NAF',
         },
     };
     export default {
