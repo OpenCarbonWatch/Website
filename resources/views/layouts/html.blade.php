@@ -18,7 +18,9 @@
 <div id="app">
     @include('layouts.navbar')
     <div class="container">
-        @yield('content')
+        <main>
+            @yield('content')
+        </main>
         @include('layouts.footer')
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div id="footer" class="mt-5 mb-3 py-2">
+<footer class="mt-5 mb-3 py-2">
     <p>
         @lang('html.footer.contact', [
             'github' => '<a href="https://github.com/OpenCarbonWatch">GitHub</a>',
@@ -12,4 +12,4 @@
             <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ strtoupper($localeCode) }}</a>
         </div>
     @endforeach
-</div>
+</footer>
