@@ -124,8 +124,6 @@
                     value: this.value,
                     role: 'combobox',
                     autocomplete: 'off',
-                    autocapitalize: 'off',
-                    autocorrect: 'off',
                     spellcheck: 'false',
                     'aria-autocomplete': 'list',
                     'aria-haspopup': 'listbox',
