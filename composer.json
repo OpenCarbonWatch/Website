@@ -1,12 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "opencarbonwatch/website",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
-    "license": "MIT",
+    "description": "A website to monitor over time greenhouse gases emissions reports published by public and private organizations, and compare them with their legal obligations and their own voluntary commitments.",
+    "license": "GNU Affero General Public License v3.0",
     "require": {
         "php": "^7.2",
         "ext-gmp": "*",
@@ -26,7 +22,7 @@
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^4.1",
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^9.0"
     },
     "config": {
         "optimize-autoloader": true,
