@@ -13,7 +13,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-window.Vue = require('vue');
+import Vue from "vue";
 
 /**
  * Manually register components to avoid unused exports warnings.
@@ -27,8 +27,6 @@ Vue.component('autocomplete-geography', require('./components/AutocompleteGeogra
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-Vue.config.devtools = true;
-Vue.config.debug = true;
 new Vue({
     el: '#app'
 });
