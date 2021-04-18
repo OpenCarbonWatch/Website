@@ -20,7 +20,8 @@
         "axios": "^0.21.1",
         "bootstrap-scss": "^4.4.1",
         "cross-env": "^7.0.2",
-        "laravel-mix": "^6.0.16",
+        "css-loader": "^5.2.2",
+        "laravel-mix": "^6.0.0",
         "laravel-mix-purgecss": "^6.0.0",
         "postcss": "8.1",
         "resolve-url-loader": "^3.1.1",
@@ -28,6 +29,7 @@
         "sass-loader": "^11.0.1",
         "vue": "^2.6.12",
         "vue-loader": "^15.9.6",
-        "vue-template-compiler": "^2.6.12"
+        "vue-template-compiler": "^2.6.12",
+        "webpack": "^5.0.0"
     }
 }
