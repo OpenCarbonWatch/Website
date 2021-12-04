@@ -2,8 +2,8 @@ Ce site repose sur des données ouvertes. Le code source utilisé pour consolide
 dans notre [répertoire GitHub](https://github.com/OpenCarbonWatch/France). Les sources suivantes sont actuellement
 utilisées.
 
-* Bilans d'émissions de gaz à effet de serre saisis et publiés sur la [plateforme officielle de l'ADEME](http://www.bilans-ges.ademe.fr/fr/bilanenligne/bilans/index/siGras/0) et téléchargés le 2021-11-27.
-* [Base SIRENE](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/) des unités légales et de leurs établissements au 2021-11-01.
+* Bilans d'émissions de gaz à effet de serre saisis et publiés sur la [plateforme officielle de l'ADEME](http://www.bilans-ges.ademe.fr/fr/bilanenligne/bilans/index/siGras/0) et téléchargés le 2021-12-04.
+* [Base SIRENE](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/) des unités légales et de leurs établissements au 2021-12-01.
 * Fichier INSEE de la [composition des intercommunalités](https://www.insee.fr/fr/information/2510634) au 2021-01-01.
 * Fichier INSEE des [populations légales (hors Mayotte)](https://www.insee.fr/fr/statistiques/4265439?sommaire=4265511) par commune, en vigueur au 2021-01-01.
 * Tableau INSEE des [populations légales à Mayotte](https://www.insee.fr/fr/statistiques/3291775) au 2017-01-01.
