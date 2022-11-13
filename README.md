@@ -1,7 +1,8 @@
 # Website
+
 Resources used to build our main website
 
-## Installation
+## Installation of the database server
 
 ### Database
 
@@ -13,45 +14,83 @@ psql -c "CREATE USER ocw_user PASSWORD 'secret_password';"
 psql -c "CREATE DATABASE ocw OWNER ocw_user ENCODING 'UTF-8';"
 ```
 
-### Application
-
-We install the application layer on an Ubuntu 18.04 server.
+### Import data
 
 ```bash
-git clone https://github.com/OpenCarbonWatch/Website.git /srv/ocw
+sudo su postgres
+psql -d ocw -c "TRUNCATE activities, cities, legal_types, assessment_organization, assessments, organizations;"
+psql -d ocw -c "DROP INDEX IF EXISTS idx_organizations_name;"
+psql -d ocw -c "COPY activities FROM '/home/data/activities.csv' CSV HEADER;"
+psql -d ocw -c "COPY cities FROM '/home/data/cities.csv' CSV HEADER;"
+psql -d ocw -c "COPY legal_types FROM '/home/data/legal_types.csv' CSV HEADER;"
+psql -d ocw -c "COPY assessments FROM '/home/data/assessments.csv' CSV HEADER;"
+psql -d ocw -c "COPY organizations FROM '/home/data/organizations.csv' CSV HEADER;"
+psql -d ocw -c "COPY assessment_organization FROM '/home/data/assessment_organization.csv' CSV HEADER;"
+psql -d ocw -c "CREATE INDEX idx_organizations_name ON organizations USING gin (name gin_trgm_ops);"
+```
+
+## Installation of the application server
+
+We install the application layer on an Ubuntu 22.04 server.
+
+### Packages
+
+Start by installing the underlying software packages, including PHP, Composer, Node.JS and Yarn.
+
+```bash
+sudo apt update
+sudo apt -y upgrade
+sudo apt install -y php8.1 php8.1-{cli,curl,fpm,common,pgsql,intl,xml,mbstring,zip,soap,gd,gmp}
+sudo apt -y install composer
+wget -qO- https://deb.nodesource.com/setup_16.x | sudo -E bash
+sudo apt-get install -y nodejs
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install -y yarn
+```
+
+### Application
+
+```bash
+sudo git clone https://github.com/OpenCarbonWatch/Website.git /srv/ocw
 cd /srv/ocw
-cp .env.example .env
-composer install
-php artisan key:generate
+sudo cp .env.example .env
+sudo composer install
+sudo php artisan key:generate
 ```
 
 Configure the `.env`file (mostly with the connection information towards the database).
 
-Install **yarn** on the server with
-
-```bash
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-apt-get update
-apt-get install yarn
-```
-
 Install the application
 
 ```bash
-php artisan migrate
-yarn install
-yarn run prod
-chown -R www-data:www-data ocw
+sudo php artisan migrate
+sudo yarn install
+sudo yarn run prod
+sudo chown -R www-data:www-data ocw
 ```
 
 ### Nginx
 
+Uninstall Apache and install Nginx
+```bash
+sudo systemctl disable --now apache2
+sudo apt remove -y apache2
+sudo apt install -y nginx
+sudo systemctl start nginx
+```
+
+Create a configuration file `/etc/nginx/sites-available/ocw` with the following content
+
 ```
 server {
-    listen 80;
-    server_name opencarbonwatch.org;
-    return 301 https://$host$request_uri;
+        if ($host = opencarbonwatch.org) {
+                return 301 https://$host$request_uri;
+        }
+        listen 80;
+        server_name opencarbonwatch.org;
+        return 301 https://$host$request_uri;
 }
 
 server {
@@ -70,38 +109,28 @@ server {
       expires 1y;
       access_log off;
       add_header Cache-Control "public";
+      add_header X-Robots-Tag "noindex, nofollow, nosnippet, noarchive";
     }
     location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info  ^(.+\.php)(/.+)$;
         fastcgi_index            index.php;
-        fastcgi_pass             unix:/var/run/php/php7.2-fpm.sock;
+        fastcgi_pass             unix:/var/run/php/php8.1-fpm.sock;
         include                  fastcgi_params;
         fastcgi_param   PATH_INFO       $fastcgi_path_info;
         fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param   PHP_VALUE "memory_limit = 2G";
+        add_header X-Robots-Tag "noindex, nofollow, nosnippet, noarchive";
     }
-    access_log /var/etc/nginx/ocw/access.log;
+    access_log /var/log/nginx/ocw_access.log;
 }
 ```
 
 Then run
-
-```
-certbot
-```
-
-### Import data
-
 ```bash
-sudo su postgres
-psql -d ocw -c "TRUNCATE activities, cities, legal_types, assessment_organization, assessments, organizations;"
-psql -d ocw -c "DROP INDEX IF EXISTS idx_organizations_name;"
-psql -d ocw -c "COPY activities FROM '/home/data/activities.csv' CSV HEADER;"
-psql -d ocw -c "COPY cities FROM '/home/data/cities.csv' CSV HEADER;"
-psql -d ocw -c "COPY legal_types FROM '/home/data/legal_types.csv' CSV HEADER;"
-psql -d ocw -c "COPY assessments FROM '/home/data/assessments.csv' CSV HEADER;"
-psql -d ocw -c "COPY organizations FROM '/home/data/organizations.csv' CSV HEADER;"
-psql -d ocw -c "COPY assessment_organization FROM '/home/data/assessment_organization.csv' CSV HEADER;"
-psql -d ocw -c "CREATE INDEX idx_organizations_name ON organizations USING gin (name gin_trgm_ops);"
+sudo ln -s /etc/nginx/sites-available/ocw /etc/nginx/sites-enabled/
+sudo rm /etc/nginx/sites-enabled/default
+sudo systemctl restart nginx
+sudo apt -y install certbot python3-certbot-nginx
+sudo certbot
 ```
-
