@@ -21,7 +21,6 @@
                        @keydown="core.handleKeyDown"
                        @focus="core.handleFocus"
                        @blur="core.handleBlur"
-                       v-on="$listeners"
                 />
                 <ul
                     ref="resultList"
@@ -243,7 +242,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     .autocomplete-input {
         box-sizing: border-box;
         position: relative;

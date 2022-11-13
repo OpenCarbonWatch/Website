@@ -41,7 +41,8 @@
             },
             search: async function (value) {
                 if (value.length >= MIN_LENGTH) {
-                    return (await axios.get('/france/search/data/activity/' + encodeURIComponent(value))).data;
+                    const response = await fetch('/france/search/data/activity/' + encodeURIComponent(value));
+                    return response.json();
                 } else {
                     return [];
                 }

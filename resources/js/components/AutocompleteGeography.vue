@@ -42,7 +42,8 @@
             },
             search: async function (value) {
                 if (value.length >= MIN_LENGTH) {
-                    return (await axios.get('/france/search/data/geography/' + encodeURIComponent(value))).data;
+                    const response = await fetch('/france/search/data/geography/' + encodeURIComponent(value));
+                    return response.json();
                 } else {
                     return [];
                 }
