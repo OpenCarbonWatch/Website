@@ -120,7 +120,6 @@ server {
         fastcgi_param   PATH_INFO       $fastcgi_path_info;
         fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_param   PHP_VALUE "memory_limit = 2G";
-        add_header X-Robots-Tag "noindex, nofollow, nosnippet, noarchive";
     }
     access_log /var/log/nginx/ocw_access.log;
 }
