@@ -17,11 +17,11 @@
     "devDependencies": {
         "@babel/core": "^7.20.2",
         "@babel/plugin-proposal-class-properties": "^7.18.6",
+        "@fullhuman/postcss-purgecss": "^5.0.0",
         "bootstrap-scss": "^4.6.2",
         "cross-env": "^7.0.3",
         "css-loader": "^6.7.1",
         "laravel-mix": "^6.0.49",
-        "laravel-mix-purgecss": "^6.0.0",
         "postcss": "^8.4.19",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.56.1",
