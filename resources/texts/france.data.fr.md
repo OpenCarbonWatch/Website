@@ -2,7 +2,7 @@ Ce site repose sur des données ouvertes. Le code source utilisé pour consolide
 dans notre [répertoire GitHub](https://github.com/OpenCarbonWatch/France). Les sources suivantes sont actuellement
 utilisées.
 
-* Bilans d'émissions de gaz à effet de serre saisis et publiés sur la [plateforme officielle de l'ADEME](http://www.bilans-ges.ademe.fr/fr/bilanenligne/bilans/index/siGras/0) et téléchargés le 2022-11-19.
+* Bilans d'émissions de gaz à effet de serre saisis et publiés sur la [plateforme officielle de l'ADEME](http://www.bilans-ges.ademe.fr/fr/bilanenligne/bilans/index/siGras/0) et téléchargés le 2022-11-26.
 * [Base SIRENE](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/) des unités légales et de leurs établissements au 2022-11-01.
 * Fichier INSEE de la [composition des intercommunalités](https://www.insee.fr/fr/information/2510634) au 2022-01-01.
 * Fichier INSEE des [populations légales (hors Mayotte)](https://www.insee.fr/fr/statistiques/6011070?sommaire=6011075) par commune, en vigueur au 2022-01-01.
