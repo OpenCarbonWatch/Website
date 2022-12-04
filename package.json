@@ -15,20 +15,20 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "@babel/core": "^7.20.2",
-        "@babel/plugin-proposal-class-properties": "^7.18.6",
-        "@fullhuman/postcss-purgecss": "^5.0.0",
-        "bootstrap-scss": "^4.6.2",
-        "cross-env": "^7.0.3",
-        "css-loader": "^6.7.1",
-        "laravel-mix": "^6.0.49",
-        "postcss": "^8.4.19",
-        "resolve-url-loader": "^5.0.0",
-        "sass": "^1.56.1",
-        "sass-loader": "^13.2.0",
-        "vue": "^3.2.45",
-        "vue-loader": "^17.0.1",
-        "vue-template-compiler": "^2.7.14",
-        "webpack": "^5.75.0"
+        "@babel/core": "^7.20",
+        "@babel/plugin-proposal-class-properties": "^7.18",
+        "@fullhuman/postcss-purgecss": "^5.0",
+        "bootstrap-scss": "^4.6",
+        "cross-env": "^7.0",
+        "css-loader": "^6.7",
+        "laravel-mix": "^6.0",
+        "postcss": "^8.4",
+        "resolve-url-loader": "^5.0",
+        "sass": "^1.56",
+        "sass-loader": "^13.2",
+        "vue": "^3.2",
+        "vue-loader": "^17.0",
+        "vue-template-compiler": "^2.7",
+        "webpack": "^5.75"
     }
 }
